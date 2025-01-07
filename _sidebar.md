@@ -22,7 +22,7 @@
 - [Debugging](Notes/Getting_Started/debugging)
 
 
-
+<!--
 **Python expressions**
 
 - [Literals](Notes/01_Expressions_Literals)
@@ -98,7 +98,7 @@
 
 
 
-<!--
+
 
 **Coming up next on JAC TV...**
 
