@@ -1,25 +1,8 @@
 **Getting Started**
 
-- [Working with files](Notes/Getting_Started/FileManipulation.md)
-
-- [LEA](/Notes/Getting_Started/LEA.md)
-
-- [What is programming](Notes/Getting_StartedWhatIsProgramming)
-
-- [What is Python?](Notes/Getting_Started/Introduction_to_Python)
-
-- [Python installation](Notes/Getting_Started/Python_Installation)
-
-- [PyCharm: The Python IDE](Notes/Getting_Started/PyCharm_IDE_installation)
-
-- [PyCharm: Installing on a Mac](Notes/Getting_Started/Installing_Pycharm_on_Mac.md)
-
-- [One Drive](Notes/Getting_Started/one_drive.md)
-
-- [Getting Started with PyCharm](Notes/Getting_Started/create_new_project)
 
 
-- [Debugging](Notes/Getting_Started/debugging)
+-  [Loops](Notes/loops.md)
 
 
 <!--
