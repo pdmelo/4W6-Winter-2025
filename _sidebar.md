@@ -8,6 +8,8 @@
 
 - [What is Python?](Notes/Getting_Started/Introduction_to_Python)
 
+-  [Loops](Notes/loops.md)
+
 - [Python installation](Notes/Getting_Started/Python_Installation)
 
 - [PyCharm: The Python IDE](Notes/Getting_Started/PyCharm_IDE_installation)
