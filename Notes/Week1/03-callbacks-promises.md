@@ -52,9 +52,8 @@ We’ll start by coding our own callback system to asynchronously create new Pok
 
 ## 🚦 Let’s Go
 
-Note
-
-Anytime a Pokemon is mentioned in the instructions, replace it with whatever entity you might have changed it to from the [setup](#-setup) section above.
+> [!Note]
+> Anytime a Pokemon is mentioned in the instructions, replace it with whatever entity you might have changed it to from the [setup](#-setup) section above.
 
 ### Callbacks
 
@@ -109,7 +108,7 @@ This is because we’re using random values for fetchTime and createTime. If cre
 
     ![Sequestianl Output](../../images/03SequestionOutput.png)
 
-    > [!CAUTION]
+    > [!ATTENTION]
     >
     > Take care **not to invoke** `fetchPokemon` (i.e. no parenthesis after ~~()~~) when passing it in. You’re giving `fetchPokemon` to `createPokemon` so that `createPokemon` may invoke `fetchPokemon` at some later point in time.
 

@@ -1,6 +1,4 @@
-
-
-
+# 0.2 - Node Modules
 
 ## 🎯 Objectives
 
@@ -281,7 +279,7 @@ If you’ve gotten this far - awesome! We have now successfully used a *core mod
 
 ### NPM Modules
 
-> [!IMPORTANT]
+> [!ATTENTION]
 >
 > **Package vs Module**
 >

@@ -18,15 +18,13 @@
 
 3. Open a terminal by going to `View -> Terminal` (` CTRL + `` or  `CMD + ``).
 
-   > [!NOTE]
+   > [!NOTE] 
    >
-   > **Backtick**
+   >  **Backtick**
    >
    > \" ` " is the _backtick_ symbol located on the top left of the keyboard, usually under the escape key.
 
-4. Create a new folder `mkdir ~/web-ii/exercises/0.1-node-basics && cd 0.1-node-basics`, and it should appear in the file explorer in VS Code.
-
-
+4. Create a new folder`mkdir ~/web-ii/exercises/0.1-node-basics && cd 0.1-node-basics`, and it should appear in the file explorer in VS Code.
 
 ## 🔍 Context
 
@@ -42,12 +40,9 @@
 
 - Since Node is just JS at the end of the day, this means that you can use one language for the whole stack (front and back end) which reduces the need to know/maintain multiple languages/technologies.
 
-- Node. JS uses  non-blocking  I/O model (i.e. asynchronous) . JS was originally non-blocking when it was written for the browser. If everything in JS was blocking, then when a user clicked a button, for example, they’d have to wait for it to finish before they could continue interacting with the webpage. 
+- Node. JS uses non-blocking I/O model (i.e. asynchronous) . JS was originally non-blocking when it was written for the browser. If everything in JS was blocking, then when a user clicked a button, for example, they’d have to wait for it to finish before they could continue interacting with the webpage.
 
   - Non-blocking code enables us to write more performant applications.
-
-    
-
 
 ## 🚦 Let’s Go
 
@@ -70,8 +65,8 @@ First we’ll play around with JavaScript in the browser to establish a baseline
 7.  In another tab, look up any (appropriate) image you think would be funny to display on the Google page and copy the URL to the image. Make sure the URL ends in a valid image file extension like `.jpg`, `.png`, etc.
 8.  Back to the Google tab, in the dev tools console, type:
 
-    > document.getElementById("id from step 6").srcset = ""; <br/>
-    > document.getElementById("id from step 6").src = "image URL from step 7";
+    > document.querySelector("#id or .class from step 6").srcset = ""; <br/>
+    > document.querySelector("#id or .classfrom step 6").src = "http://image.url/from/step/7.png";
 
     And you should see your image replace the Google logo!
 
@@ -87,34 +82,31 @@ First we’ll play around with JavaScript in the browser to establish a baseline
 
    - If you get an error saying “command not found”, then make sure you install the LTS version of [Node.js](https://nodejs.org/en).
 
-2. You should see that your terminal’s prompt has changed to `>`. This means that you’re inside of a Node *REPL* which stands for *read evaluate print loop*. We can use this REPL environment just like we used the browser dev tools console in the previous section of this exercise.
+2. You should see that your terminal’s prompt has changed to `>`. This means that you’re inside of a Node _REPL_ which stands for _read evaluate print loop_. We can use this REPL environment just like we used the browser dev tools console in the previous section of this exercise.
 
 3. As before, type a mathematical expression like `1 + 1` into the console and hit enter. You should see `2` as the output just like when you did this in the browser.
 
 4. As before, type any string and then execute the `.toUpperCase()` method. You should see the string in all caps as the output.
 
-   > 🤔 Hopefully by now you’re thinking, *“Well, if everything is the same here (in the terminal) as it is in the browser, then what’s the big deal?“*. Great question!
+   > 🤔 Hopefully by now you’re thinking, _“Well, if everything is the same here (in the terminal) as it is in the browser, then what’s the big deal?“_. Great question!
 
 5. The next thing we tried in the browser was accessing the `document` object. Let’s try doing that now. What happens if you type `document` into the REPL Node environment?
 
-  ```bash
-   > document
-   Uncaught ReferenceError: document is not defined
-  ```
+```bash
+ > document
+ Uncaught ReferenceError: document is not defined
+```
+
 > **Note**
 >
-> Why doesn’t `document` work here? Turns out, `document` is not part of JavaScript. It’s actually a part of the web browser. The browser *gives JS access to the DOM* by passing it a `document` object it can use. Since there’s no browser when using Node, that means there is no `document` object!
-
-
+> Why doesn’t `document` work here? Turns out, `document` is not part of JavaScript. It’s actually a part of the web browser. The browser _gives JS access to the DOM_ by passing it a `document` object it can use. Since there’s no browser when using Node, that means there is no `document` object!
 
 6. Now type `process` into the REPL and hit enter. What we’re seeing here is several methods and properties that the Node runtime is giving to JS. With this `process` object, we can do many things that we could not do in the browser. To prove it, try typing `process` in the browser dev tools console. You’ll see it will come up as `undefined`.
 7. One of the methods we can call right now on the `process` object is called `exit, Type .exit`. Do this and you’ll see that we’re now back to the regular bash terminal.
 
-
-
 ### Blocking vs. Non-Blocking Code
 
-*Blocking* code means that you have to wait for the first operation to finish before the second operation can start. With Node, it is very easy to write code that is *non-blocking*. This means that you can perform several operations at a time without having to wait for one to finish before executing another.
+_Blocking_ code means that you have to wait for the first operation to finish before the second operation can start. With Node, it is very easy to write code that is _non-blocking_. This means that you can perform several operations at a time without having to wait for one to finish before executing another.
 
 1. Create two new files called `sync.js` and `async.js` inside of the `~/web-ii/exercises/0.1-node-basics` folder you created in the `🔨 Setup` section of this exercise.
 
@@ -141,17 +133,19 @@ First we’ll play around with JavaScript in the browser to establish a baseline
 
    - This function will take an integer and a callback function as parameters. If you need a refresher on callback functions, [click here](https://www.youtube.com/watch?v=pTbSfCT42_M).
 
-   - In the body of this function, call the  `setTimeout()` method and pass into it 2 parameters:
+   - In the body of this function, call the `setTimeout()` method and pass into it 2 parameters:
 
      1. A callback function that invokes the callback we originally passed into `getUserAsync()`. When invoking the callback, pass in the `id` as a parameter like this: `callback(id)`;
      2. The integer `2000` which represents 2 seconds.
 
-   The purpose of `setTimeout` is to execute code after a specified period of time. What is “special” about `setTimeout` is that it is *asynchronous*. This means that your program will continue to execute while `setTimeout` waits for time to pass on its own.
+   The purpose of `setTimeout` is to execute code after a specified period of time. What is “special” about `setTimeout` is that it is _asynchronous_. This means that your program will continue to execute while `setTimeout` waits for time to pass on its own.
 
 8. Call `getUserAsync` and pass in `1` for the first parameter. The second parameter will be the callback function that we want `getUserAsync` to invoke. You can either write this callback function externally and pass it in by name:
 
    ```js
-   const myCallback = () => {  /* Function body goes here. */};
+   const myCallback = () => {
+     /* Function body goes here. */
+   };
    getUserAsync(1, myCallback);
    ```
 
@@ -159,9 +153,7 @@ First we’ll play around with JavaScript in the browser to establish a baseline
 
    ```js
    getUserAsync(1, () => {
-   
      /* Function body goes here. */
-   
    });
    ```
 
@@ -179,16 +171,12 @@ First we’ll play around with JavaScript in the browser to establish a baseline
 
 12. Take a screenshot of the terminal containing the output from running both scripts.
 
-    
-
-
-
-Hopefully you see the difference between *blocking/synchronous* code and *non-blocking/asynchronous* code. The blocking example had to wait for each step of the program to finish before executing the next line. The non-blocking example was able to start executing 2 calls of a function while printing the result of `1 + 1` at the same time! 
+Hopefully you see the difference between _blocking/synchronous_ code and _non-blocking/asynchronous_ code. The blocking example had to wait for each step of the program to finish before executing the next line. The non-blocking example was able to start executing 2 calls of a function while printing the result of `1 + 1` at the same time!
 
 ## 📥 Submission
 
-Submit the two screenshots (or one screenshot if you can manage to stitch them together) you took while doing this exercise in the Moodle drop box called *Exercise 0.1 - Node Basics*.
+Submit the two screenshots (or one screenshot if you can manage to stitch them together) you took while doing this exercise in the Moodle drop box called _Exercise 0.1 - Node Basics_.
 
-------
+---
 
-Hopefully you now understand the distinction between *JS in the browser* and *JS in Node* a little bit better. The core of the JavaScript language stays the same between the two. What changes is the objects that the runtime environment gives to JavaScript to work with.
+Hopefully you now understand the distinction between _JS in the browser_ and _JS in Node_ a little bit better. The core of the JavaScript language stays the same between the two. What changes is the objects that the runtime environment gives to JavaScript to work with.
