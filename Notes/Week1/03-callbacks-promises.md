@@ -65,17 +65,7 @@ We’ll start by coding our own callback system to asynchronously create new Pok
 
    1. This function will take no parameters.
 
-   2. Declare a variable called
-
-      ```
-      fetchTime
-      ```
-
-      and initialize it to a
-
-      random number
-
-      between 1 and 500.
+   2. Declare a variable called `fetchTime` and initialize it to a random number between 1 and 500.
 
       - This number will control how long the `setTimeout`, outlined below, will take to execute.
       - The randomness is meant to mimic the fluctuation of network speeds.
@@ -97,9 +87,10 @@ We’ll start by coding our own callback system to asynchronously create new Pok
 8. Run the program in the terminal (`node callbacks.js`) several times. If you coded everything correctly until this point, you should see the new Pokemon being printed randomly upon each program execution:
 
    ![RandomOut](../../images/03RandomOutput.png)
-This is because we’re using random values for fetchTime and createTime. If createTime is greater than fetchTime, it means that the createPokemon function will take longer to run. If it takes longer to run than fetchPokemon, then it should make sense that when fetchPokemon prints, it does not have the new Pokemon inside of pokemonDatabase to print, so it only prints the original three.
+   This is because we’re using random values for fetchTime and createTime. If createTime is greater than fetchTime, it means that the createPokemon function will take longer to run. If it takes longer to run than fetchPokemon, then it should make sense that when fetchPokemon prints, it does not have the new Pokemon inside of pokemonDatabase to print, so it only prints the original three.
 
-​	Ideally, we would like to have the new Pokemon displayed 100% of the time, and in the right order. How can we fix this problem? You guessed it, 	callbacks! 🤩
+​ Ideally, we would like to have the new Pokemon displayed 100% of the time, and in the right order. How can we fix this problem? You guessed it, callbacks! 🤩
+
 9. Modify the createPokemon function declaration to take a second parameter called callback.
 
 10. Call the callback() after the new Pokemon has been inserted into the pokemonDatabase array.
@@ -112,12 +103,7 @@ This is because we’re using random values for fetchTime and createTime. If cre
     >
     > Take care **not to invoke** `fetchPokemon` (i.e. no parenthesis after ~~()~~) when passing it in. You’re giving `fetchPokemon` to `createPokemon` so that `createPokemon` may invoke `fetchPokemon` at some later point in time.
 
-    
-
 12. Run the program (`node callbacks.js`) several times now and confirm that the new Pokemon are being printed 100% of the time, and **in the same order** every time.
-
-
-
 
 #### Callback Hell
 
@@ -125,11 +111,9 @@ The trouble with callback functions is that they can be nested quite easily. Whe
 
 ![03-Callback-Hell](../../images/03-Callback-Hell.gif)
 
-
-
 ### Promises
 
-Let’s see how we can get rid of *callback hell* by using promises.
+Let’s see how we can get rid of _callback hell_ by using promises.
 
 1. Make a duplicate of `callbacks.js` and call it `promises.js`.
 
@@ -164,17 +148,13 @@ Chaining promises using `then` is great if we want multiple operations to run se
 4. After the array, call `Promise.all(pokemonPromises)`. This function takes an array of promises, and waits for all promises in the array to be fulfilled. Once all promises in the array are fulfilled, `Promise.all` returns a promise of its own. We can call `then` on this returned promise to execute something after all the simultaneous operations have finished. In this case, we want to execute `fetchPokemon` after all the Pokemon have been created.
 5. Run this program (`node promise-all.js`) several times and confirm that the new Pokemon are being printed 100% of the time, **but not** in the same order every time. It should make sense why the output is different each time you run the program. Since we are running all `createPokemon` operations **at the same time**, and each one of them takes a different time to run, we will get a different output each time.
 
-​                                  ![Promise-All](../../images/03Promise-All.png)
+​ ![Promise-All](../../images/03Promise-All.png)
 
+​ We can compare the time difference between sequential operations and simultaneous operations by using [`console.time()`](https://developer.mozilla.org/en-US/docs/Web/API/Console/time):
 
+​ ![03SequentialvsSimultaneous](../../images/03SequentialvsSimultaneous.png)
 
-​        We can compare the time difference between sequential operations and simultaneous operations by using [`console.time()`](https://developer.mozilla.org/en-US/docs/Web/API/Console/time):
-
-​					![03SequentialvsSimultaneou](../..//images/03SequentialvsSimultaneous.png)
-
-The execution time was cut in half! 
-
-
+The execution time was cut in half!
 
 ### Async/Await
 
@@ -186,15 +166,13 @@ After a couple of years of using promises, JS developers found it cumbersome to 
 >
 > From [Wikipedia](https://en.wikipedia.org/wiki/Syntactic_sugar): Syntactic sugar is syntax within a programming language that is designed to make things easier to read or to express. It makes the language “sweeter” for human use: things can be expressed more clearly, more concisely, or in an alternative style that some may prefer.
 
-
-
 1. Make a duplicate of `promises.js` and call it `async-await.js`.
 
 2. Inside of `async-await.js`, remove the block of chained promises from the end of the file.
 
 3. Declare a function called `createAllPokemon()`:
 
-   1. In the body of the function, call  `createPokemon`, pass `createPokemon` a new object, but don’t call `then()` on `createPokemon`. Instead, add the keyword`await` in front of the call.
+   1. In the body of the function, call `createPokemon`, pass `createPokemon` a new object, but don’t call `then()` on `createPokemon`. Instead, add the keyword`await` in front of the call.
 
       - The `await` keyword is essentially a (nicer looking) replacement for using `then()`. The program will wait for this promise to be fulfilled before moving on with execution.
 
@@ -205,19 +183,17 @@ After a couple of years of using promises, JS developers found it cumbersome to 
 4. We can only use `await` inside of a function that has been declared as `async`. To do this, write the keyword `async` before the function declaration.
 
 5. Call `createAllPokemon` at the end of the file.
-    ![ ](../../images/03AsyncWait.png) 
+   ![ ](../../images/03AsyncWait.png)
 6. Run this program (`node async-await.js`) several times and confirm that the new Pokemon are being printed 100% of the time, and **in the same order** every time.
-
-
 
 ## 📥 Submission
 
 Take a screenshot of all four programs being run with the time that each program took to execute and submit it on Moodle. Again, you can use [`console.time()`](https://developer.mozilla.org/en-US/docs/Web/API/Console/time) to accomplish this. Put `console.time('timer label')` before calling any function, and put `console.timeEnd('timer label')` inside of `fetchPokemon` just after it finishes printing all the Pokemon to the terminal.
 
-![03Submission](../..//images/03Submission.png)
+![03Submission](../../images/03Submission.png)
 
-Submit the screenshot in the Moodle drop box called *Exercise 0.3 - Callbacks & Promises*.
+Submit the screenshot in the Moodle drop box called _Exercise 0.3 - Callbacks & Promises_.
 
-------
+---
 
 Asynchronous programming can be tough to wrap your head around, that’s for sure. Hopefully you can appreciate the advantages it provides and how it unlocks a whole other world of possibilities!
