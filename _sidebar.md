@@ -13,11 +13,13 @@
 
 
 - [MVC Exercise](Notes/Week2/11-mvc.md)
-
-<!--
 - [Model View Conreoller](Notes/Week2/mvc.md)
+<!--
 - [Docker](Notes/Week2/docker.md)
+- [Docker Exercise](Notes/Week2/12-docker.md)
 - [TypeSCript Intro](Notes/Week1/04-typescript.md)
+- [PostgreSQL](Notes/Week2/13-postgresql.md)
+
 **Guides**
 
 - [Environment Setup](Guides/environmentsetup.md)
