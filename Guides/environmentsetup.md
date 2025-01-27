@@ -6,29 +6,30 @@
 
 - **Install** Visual Studio Code.
 
-[ If you’re using 🍎 MacOS or a 🐧 Linux distribution, you can skip down to the [🐳 Docker](https://vikramsinghmtl.github.io/420-4W6-Web-Programming-II/guides/environment-setup/#-docker) section. ]: #
+If you’re using 🍎 MacOS or a 🐧 Linux distribution, you can skip down to the[ 🐳 Docker](#🐳-docker) section: 
+
 
 ## 🪟 Windows Users
 
-WSL
-
-A cool new feature Microsoft has been working on is called the _Windows Subsystem for Linux_. This allows developers to run Linux environments on their Windows machine so you can leverage the strengths of both operating systems.
+>[!NOTE]**WSL**
+>
+>A cool new feature Microsoft has been working on is called the _Windows Subsystem for Linux_. This allows developers to run Linux environments on their Windows machine so you can leverage the strengths of both operating systems.
 
 1. Make sure virtualization is enabled by going to the **Task Manager** under the **Performance** tab:
-1. If virtualization is disabled, you’ll have to go into your BIOS and enable virtualization. This will look different depending on what kind of motherboard you have, usually Intel or AMD.
+![Virtualization](../../images/0.2.1-Virtualization.png)
+2. If virtualization is disabled, you’ll have to go into your BIOS and enable virtualization. This will look different depending on what kind of motherboard you have, usually Intel or AMD.
 
    - For AMD, enable a feature in the BIOS called **SVM**.
    - For Intel, enable a feature in the BIOS called **VT-x**.
    - If none of these work, you’ll have to look up how to turn on virtualization for your specific model of motherboard.
-1. Click on the Windows button, type “features”, and select **Turn Windows features on or off**
+3. Click on the Windows button, type “features”, and select **Turn Windows features on or off**
+     - Enable **Virtual Machine Platform**.
+     - Enable **Windows Subsystem for Linux**.
+     - Click OK and restart your computer.
 
+4. Click on the Windows button, type “Microsoft Store”, and open the Microsoft Store app.
 
-   - Enable **Virtual Machine Platform**.
-   - Enable **Windows Subsystem for Linux**.
-   - Click OK and restart your computer.
-1. Click on the Windows button, type “Microsoft Store”, and open the Microsoft Store app.
-1. Search for “WSL” and install **Windows Subsystem for Linux**.
-
+5. Search for “WSL” and install **Windows Subsystem for Linux**.
 
 
 ## 🐳 Docker
@@ -37,7 +38,7 @@ A cool new feature Microsoft has been working on is called the _Windows Subsyste
 >
 > What even is?
 >
-> If you’re not sure what Docker is, read up on it [here](https://vikramsinghmtl.github.io/420-4W6-Web-Programming-II/docker) first.
+> If you’re not sure what Docker is, read up on it [here](../Notes/Week2/docker) first.
 
 
 

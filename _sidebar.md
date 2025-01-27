@@ -8,21 +8,23 @@
 - [Callbacks & Promises](Notes/Week1/03-callbacks-promises.md)
 
 
-
 **Week 2**
-
 
 - [MVC Exercise](Notes/Week2/11-mvc.md)
 - [Model View Conreoller](Notes/Week2/mvc.md)
-<!--
 - [Docker](Notes/Week2/docker.md)
 - [Docker Exercise](Notes/Week2/12-docker.md)
-- [TypeSCript Intro](Notes/Week1/04-typescript.md)
-- [PostgreSQL](Notes/Week2/13-postgresql.md)
+- [TypeScript Intro](Notes/Week2/14-typescript.md)
+- [PostgreSQL Exercise](Notes/Week2/13-postgresql.md)
 
 **Guides**
 
 - [Environment Setup](Guides/environmentsetup.md)
+- [Debugging](Guides/debugging.md)
+<!--
+
+- [TypeSCript Intro](Notes/Week1/04-typescript.md)
+
 
 **Week 15**
 
