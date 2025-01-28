@@ -11,16 +11,16 @@
 
 1. Using the terminal, navigate to your `~/web-ii/exercises/` folder that you created for the first three exercises.
 
-2. Go to [the repository for this exercise](https://github.com/JAC-CS-Web-Programming-II-W24/E1.2-Docker-Template) and click `Code -> 📋` to copy the URL.
+2. Go to [the repository for this exercise](https://github.com/JAC-CS-Web-Programming-II-W25/E1.2-Docker-Template) and click `Code -> 📋` to copy the URL.
+
+   ![git-docker-template](../../images\git-docker-template.png)
 
 3. Clone the Git repo from the CLI `git clone <paste URL from GitHub>` (without the angle brackets) or using a GUI client like [GitHub Desktop](https://desktop.github.com/).
 
    - You may have to use the `HTTPS` or `SSH` URL to clone depending on your settings. If one doesn’t work, try the other by clicking `Use SSH` or `Use HTTPS` above the 📋, and copy the new URL.
 
 4. Rename the cloned folder to `~/web-ii/exercises/1.2-docker/`.
-
-   Directory1.2-dockerDirectory.devcontainerdevcontainer.jsondefine the development environmentdocker-compose.ymland spin up the containers using Docker..envcontains the environment variables required to set up the PostgreSQL database server.init.sqlcontains the database setup script.
-![docker-FileTree](../../images/docker-filetree.png)
+  ![docker-FileTree](../../images/docker-filetree.png)
 
 
 >[!CAUTION]
@@ -34,6 +34,7 @@ Go through each of these files and read the comments I’ve left for you to unde
    - If you’re running Docker Desktop for the first time, skip all the initial screens and continue without making an account.
 
    - It won’t look exactly like this but this is roughly what you should see when you open Docker:
+     ![docker-start](../../images/docker-start.png)
 
      
 
@@ -41,8 +42,8 @@ Go through each of these files and read the comments I’ve left for you to unde
 
 Before continuing, make sure to:
 
-1. Understand how [Docker](https://vikramsinghmtl.github.io/420-4W6-Web-Programming-II/concepts/docker) works.
-2. Set up your [development environment](https://vikramsinghmtl.github.io/420-4W6-Web-Programming-II/guides/environment-setup).
+1. Understand how [Docker](/Notes/Week2/docker) works.
+2. Set up your [development environment](/Guides/environment-setup).
 
 ## 🚦 Let’s Go
 
@@ -68,9 +69,13 @@ Before continuing, make sure to:
    and search for `Dev Container: Open Folder in Container`. Select the folder for this exercise.
    
    - On the bottom right you will be prompted to open the logs, please do so in case there are any errors.
+   ![docker-connect](../../images/docker-connection.png)
    - VS Code will then restart and continue spinning up the containers. It will again ask you if you want to open the logs, and you will again do so.
+   ![docker-connecting-to-devContainer](../../images/docker-connecting-to-container.png)
    - If all goes well, the logs should stop and you should see a bunch of messages about extensions being successfully installed.
    - You should also see `>< Dev Container: Web II @ desktop-linux` in the bottom left corner.
+   - And this is how the docker desktop will display your container.
+   ![docker-container](../../images/docker-established.png)
    
 5. Open a terminal.
    
@@ -79,6 +84,13 @@ Before continuing, make sure to:
    - If one was already open, in the header of the terminal panel, click the `+` icon which will open a new terminal instance.
    
 6. From one of the terminal windows, run `psql`. You should see your prompt change to something like this: `postgres=#`. This means you are now connected to the PostgreSQL server container!
+>[!TIP]
+>if you see this error
+>![psql-error](../../images/docker-err-psql.png)
+>restart the docker
+>Click on the `>< Dev Container: Web II @ desktop-linux` close remote connection
+>Reopen in the container
+
 
 7. Run `\l` (**l**ist) to display the list of databases. `YourDB` (the name will be whatever you named it in step 2) should be one of them if the initial setup script ran successfully.
 

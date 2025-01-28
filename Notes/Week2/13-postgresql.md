@@ -9,7 +9,9 @@
 
 1. Using the terminal, navigate to your `~/web-ii/exercises/` folder.
 
-2. Go to [the repository for this exercise](https://github.com/JAC-CS-Web-Programming-II-W24/E1.3-PostgreSQL-Template) and click `Code -> 📋` to copy the URL.
+2. Go to [the repository for this exercise](https://github.com/JAC-CS-Web-Programming-II-W25/E1.3-PostgreSQL-Template) and click `Code -> 📋` to copy the URL.
+
+   ![git-psql-template](../../images/git-psql-template.png)
 
 3. Clone the Git repo from the CLI `git clone <paste URL from GitHub>` (without the angle brackets) or using a GUI client like [GitHub Desktop](https://desktop.github.com/).
 
@@ -41,6 +43,10 @@
 
 7. In VS Code, hit `CMD/CTRL + SHIFT + P` and search + run `dev container: open folder in container`.
 
+   This is how your docker will show the new container.
+
+   ![docker-postgesql](../../images/docker-13connect.png)
+
 8. In the terminal of VS Code, hit the `+` icon to open a new terminal instance. Run `ls` to make sure you’re in the root directory of the exercise and that you see `package.json`.
 
 9. Run `npm install` to install all our dependencies.
@@ -49,7 +55,7 @@
 
 In E1.2, we set up the development environment using Docker to spin up our containers. One for running our application code, and one for running our database server. We used the PSQL client to connect to the database and execute SQL commands.
 
-In this exercise, we’re going to do the same thing, but with TypeScript instead of running the commands directly in the database. The first thing to do is open `app.ts` and notice is at the top is a module we’re importing: [postgresql.js](https://github.com/porsager/postgres). This library is going to allow us to connect to the PostgreSQL database we’re running in our Docker container.
+In this exercise, we’re going to do the same thing, but with TypeScript instead of running the commands directly in the database. The first thing to do is open `app.ts` and notice at the top is a module we’re importing: [postgresql.js](https://github.com/porsager/postgres). This library is going to allow us to connect to the PostgreSQL database we’re running in our Docker container.
 
 ## 🚦 Let's Go
 1. Click the icon right next to the `+` terminal icon of the two rectangles stacked up on each other. This will open another new terminal instance and split the view so that we can see both terminals at the same time.
@@ -63,12 +69,12 @@ In this exercise, we’re going to do the same thing, but with TypeScript instea
 5. Declare a variable using the interface as the type and initialize it with values that make sense for the database entity. We want to use these values to perform an `INSERT` statement on our database using postgresql.js.
 
 6. To perform this INSERT, use the [postgresql.js documentation](https://github.com/porsager/postgres?tab=readme-ov-file#usage) to figure out how to execute an SQL command on the database.
->[!CAUTION]
->**Reading Documentation**
->
->**Reading is a critical skill in software development**, I cannot overstate this enough. If you want to be a professional developer, you must learn how to be effective at reading technical documentation. Reading will be a significant portion of your job. Part of why I chose this library is because the documentation is beginner-friendly and easy to grok.
+	>[!CAUTION]
+	>**Reading Documentation**
+	>
+	>**Reading is a critical skill in software development**, I cannot overstate this enough. If you want to be a professional developer, you must learn how to be effective at reading technical documentation. Reading will be a significant portion of your job. Part of why I chose this library is because the documentation is beginner-friendly and easy to grok.
 
-7. Find out using the documentation how you can get the newly inserted row’s ID. Here’s another hint.
+7. Find out using the [documentation](https://github.com/porsager/postgres?tab=readme-ov-file#usage) on how you can get the newly inserted row’s ID. [Here’s](https://www.postgresql.org/docs/current/dml-returning.html) another hint.
 
 8. Once we’ve successfully inserted a new row into the database using TypeScript/postgresql.js and have retrieved the newly inserted ID, write:
 
