@@ -10,11 +10,11 @@
 **Week 2**
 
 - [MVC Exercise](Notes/Week2/11-mvc.md)
-- [Model View Controller](Notes/Week2/mvc.md)
+- [1.2 Model View Controller](Notes/Week2/mvc.md)
 - [Docker](Notes/Week2/docker.md)
-- [Docker Exercise](Notes/Week2/12-docker.md)
+- [1.2 Docker Exercise](Notes/Week2/12-docker.md)
 - [TypeScript Intro](Notes/Week2/14-typescript.md)
-- [PostgreSQL Exercise](Notes/Week2/13-postgresql.md)
+- [1.3 PostgreSQL Exercise](Notes/Week2/13-postgresql.md)
 
 **Guides**
 
