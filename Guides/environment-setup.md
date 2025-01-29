@@ -16,7 +16,7 @@ If you’re using 🍎 MacOS or a 🐧 Linux distribution, you can skip down to 
 >A cool new feature Microsoft has been working on is called the _Windows Subsystem for Linux_. This allows developers to run Linux environments on their Windows machine so you can leverage the strengths of both operating systems.
 
 1. Make sure virtualization is enabled by going to the **Task Manager** under the **Performance** tab:
-![Virtualization](../../images/0.2.1-Virtualization.png)
+![Virtualization](../images/0.2.1-Virtualization.png)
 2. If virtualization is disabled, you’ll have to go into your BIOS and enable virtualization. This will look different depending on what kind of motherboard you have, usually Intel or AMD.
 
    - For AMD, enable a feature in the BIOS called **SVM**.
@@ -46,7 +46,7 @@ If you’re using 🍎 MacOS or a 🐧 Linux distribution, you can skip down to 
 
 2. 🏠 Windows users: If the installer prompts you, make sure WSL2 option is checked:
 
-   ![Docker WSL2](../../images/1.2-Docker-WSL2.png)
+   ![Docker WSL2](../images/1.2-Docker-WSL2.png)
 
 ## 💻VS Code
 
