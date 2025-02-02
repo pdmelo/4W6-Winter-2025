@@ -61,6 +61,14 @@
 
    ![npm-modules](../../images/1.3-npmmodules.jpg)
 
+   You should see this when its complete
+
+   ![npm-install](../../images/1.3-npmintall.jpg)
+
+   And new folder in your directory node_modules
+
+   ![npm-modules](../../images/1.3-npmmodules.jpg)
+
 ## 🔍 Context
 
 In E1.2, we set up the development environment using Docker to spin up our containers. One for running our application code, and one for running our database server. We used the PSQL client to connect to the database and execute SQL commands.
