@@ -41,15 +41,17 @@
 
 6. Copy the `.devcontainer/init.sql` file from E1.2 and paste it into the `.devcontainer/` folder for this exercise.
 
-7. In VS Code, hit `CMD/CTRL + SHIFT + P` and search + run `dev container: open folder in container`.
+7. In VS Code, hit `CMD/CTRL + SHIFT + P` and search + run `dev container: open folder in container` which is which is `1.3-postgresql`
+
+8. 
 
    This is how your docker will show the new container.
 
    ![docker-postgesql](../../images/docker-13connect.png)
 
-8. In the terminal of VS Code, hit the `+` icon to open a new terminal instance. Run `ls` to make sure you’re in the root directory of the exercise and that you see `package.json`.
+9. In the terminal of VS Code, hit the `+` icon to open a new terminal instance. Run `ls` to make sure you’re in the root directory of the exercise and that you see `package.json`.
 
-9. Run `npm install` to install all our dependencies.
+10. Run `npm install` to install all our dependencies.
 
    You should see this when its complete
 
