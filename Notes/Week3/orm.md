@@ -32,6 +32,6 @@ Think of ORM like having a personal translator who speaks both your language and
 
 ## Example
 Using the popular [ORM Prisma](https://www.prisma.io/docs/getting-started/quickstart-sqlite) as an example, look at how they create a new user record in the database:
-					<img src="../../images/prismaORM.png" height=200/>				
+					<img src="../../images/prismaORM.png" alt="prims-code" style="zoom:50%;"/>				
 
 Notice that you don't actually see any SQL. Prisma abstracts away the actual SQL operation so that the dev just has to worry about calling the `create()` function, and passing in the data.
