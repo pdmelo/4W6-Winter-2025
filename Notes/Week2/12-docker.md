@@ -20,7 +20,7 @@
    - You may have to use the `HTTPS` or `SSH` URL to clone depending on your settings. If one doesn’t work, try the other by clicking `Use SSH` or `Use HTTPS` above the 📋, and copy the new URL.
 
 4. Rename the cloned folder to `~/web-ii/exercises/1.2-docker/`.
-  ![docker-FileTree](../../images/docker-filetree.png)
+    ![docker-FileTree](../../images/docker-filetree.png)
 
 
 >[!CAUTION]
@@ -66,7 +66,7 @@ Before continuing, make sure to:
    - Save the file once finished.
 
 4. [Assuming the `Dev Container` extension](../Guides/environmentsetup?id=%f0%9f%92%bbvs-code) is installed, hit Ctrl or ⌘ + Shift + P
-   and search for `Dev Container: Open Folder in Container`. Select the folder for this exercise.
+   and search for `Dev Container: Open Folder in Container`. Select the folder for this exercise, which is `1.2-docker`
    
    - On the bottom right you will be prompted to open the logs, please do so in case there are any errors.
    ![docker-connect](../../images/docker-connection.png)
