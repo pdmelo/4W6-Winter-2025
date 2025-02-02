@@ -2,7 +2,7 @@
 
 1. Inside the terminal panel of VSC, click on the dropdown menu and select  `JavaScript Debug Terminal`.
 
-   ![Debug Terminal](../../images/2.1-debug-terminal.png)
+   ![Debug Terminal](../images/2.1-debug-terminal.png)
 
    This will create a new terminal instance. To go back to the first terminal, you can select it from the same dropdown menu.
 
@@ -10,14 +10,14 @@
 
 3. Set a breakpoint in `app.ts` by clicking to the left of any line number.
 
-![Breakpoint](../../images/2.2debugg-bp.png)
+![Breakpoint](../images/2.2debugg-bp.png)
 
 4. Run your code again and the program should pause its execution on the line which you set the breakpoint.
 
-5. Click on the debugger tab on the left navigation and you should see a list of all the current variables and their values.
-![Variables](../../images/2.3-debugger-variables.png)
+5. Click on the debugger tab on the left navigation and you should see a list of all the current variables and their values. 
+           ![Variables](../images/2.3-debugger-variables.png)  
 
-![debugger](../../images/2.4debugger-points.png)
+![debugger](../images/2.4debugger-points.png)
  1.  The variables and their values;
  2. The yellow bar indicating the program has paused execution;
  3. The output in the terminal;
