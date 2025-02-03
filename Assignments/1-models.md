@@ -40,9 +40,13 @@ To complete this assignment, you should be familiar with the following concepts 
 - **[Testing with Jest](https://vikramsinghmtl.github.io/420-4W6-Web-Programming-II/guides/testing)**: Familiarity with Jest and how to run tests for TypeScript applications.
 
 >[!CAUTION]
+>
 >If you’re not comfortable with any of the above, **please send me a message on Teams** and I can help you! It is your responsibility to ensure you have learned all concepts we’ve seen so far so that you can do the assignment effectively.
 
-🚦 Let’s Go
+
+
+## 🚦 Let’s Go
+
 Your task is to create a todo application that keeps track of a user’s task list. You will accomplish this by implementing the CRUD methods in the provided Todo.ts class skeleton.
 
 Todos (85%)
@@ -96,7 +100,7 @@ To submit your assignment, follow these steps:
    ```
 
 
-   
+
 
 2. Push your commits to the remote repository:
 
