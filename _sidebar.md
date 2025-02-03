@@ -4,7 +4,6 @@
 **Assignments**
 
 - [1-Models](Assignments/1-models.md)
--->
 
 **Week 1**
 
