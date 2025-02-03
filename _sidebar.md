@@ -4,7 +4,7 @@
 **Assignments**
 
 - [1-Models](Assignments/1-models.md)
-
+-->
 **Week 1**
 
 - [Intro to Course](Notes/Week1/01_intro_to_course)
