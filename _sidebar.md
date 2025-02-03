@@ -1,8 +1,10 @@
+<!--
 ## [**Home**](/)
 
 **Assignments**
 
 - [1-Models](Assignments/1-models.md)
+-->
 
 **Week 1**
 
@@ -28,4 +30,6 @@
 
 - [Environment Setup](Guides/environment-setup.md)
 - [Debugging](Guides/debugging.md)
+<!--
 - [Testing](Guides/testing.md)
+  -->
