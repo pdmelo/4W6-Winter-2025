@@ -51,9 +51,11 @@ To complete this assignment, you should be familiar with the following concepts 
 Your task is to create a todo application that keeps track of a user’s task list. You will accomplish this by implementing the CRUD methods in the provided Todo.ts class skeleton.
 
 ## Todos (85%)
->[!TIPS]
->Read the Comments
+>[!TIP]
+>**Read the Comments**
 >I have left detailed comments in Todo.ts and Todo.test.ts. Please read them and then re-read them to get a solid understanding about what is expected from you.
+>
+
 
 Todo.ts
 
@@ -71,7 +73,7 @@ function markComplete(): Promise<void>{}
 
 While implementing the methods, refer to the Jest test suite (./tests/Todo.test.ts) to guide your development process. Make sure all tests pass before considering the assignment complete.
 
-> [!CAUTION] 
+> [!WARNING] 
 >
 > **Tests are a Guide**
 >
