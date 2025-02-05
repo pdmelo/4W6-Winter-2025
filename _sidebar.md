@@ -1,10 +1,7 @@
-<!--
-## [**Home**](/)
-
 **Assignments**
 
 - [1-Models](Assignments/1-models.md)
--->
+
 **Week 1**
 
 - [Intro to Course](Notes/Week1/01_intro_to_course)
@@ -25,10 +22,10 @@
 
 - [Object Relational Mapping](Notes/Week3/orm.md)
 
-**Guides**
+  **Guides**
 
 - [Environment Setup](Guides/environment-setup.md)
 - [Debugging](Guides/debugging.md)
-<!--
 - [Testing](Guides/testing.md)
-  -->
+- [PostresSQL](Guides/database.md)
+- [Troubleshooting](Guides/troubleshooting.md)

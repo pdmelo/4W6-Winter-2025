@@ -1,7 +1,7 @@
 # 1 - Models
 
 - 💯 **Worth**: 7%
-- 📅 **Due**: February 16, 2024 @ 23:59
+- 📅 **Due**: February 16, 2025 @ 23:59
 - 🚫 **Penalty**: Late submissions lose 10% per day to a maximum of 3 days. Nothing is accepted after 3 days and a grade of 0% will be given.
 
 ## 🎯 Objectives
@@ -14,11 +14,12 @@
 
 ## 🔨 Setup
 
-1. Clone (do not download as a zip) the starter repository from GitHub.
-2. Make sure Docker Desktop is open.
-3. Start the development container in VS Code by using the `Dev Containers: Open Folder in Container...` command from the Command Palette (CTRL/CMD+SHIFT+P) and select the cloned directory.
-4. Run the following command in the terminal to install all necessary dependencies: `npm install`.
-5. Verify that the database was set up properly by running:
+1. [Click here](https://classroom.github.com/a/8e9ITenX) to join the Git classroom.
+2. Clone (do not download as a zip) the starter repository from GitHub.
+3. Make sure Docker Desktop is open.
+4. Start the development container in VS Code by using the `Dev Containers: Open Folder in Container...` command from the Command Palette (CTRL/CMD+SHIFT+P) and select the cloned directory.
+5. Run the following command in the terminal to install all necessary dependencies: `npm install`.
+6. Verify that the database was set up properly by running:
    1. `psql` to connect to the database server.
    2. `\c TodoDB` to connect to the database.  
    3. `\dt` to see the list of tables. There should be one called `todos`.
@@ -49,7 +50,7 @@ To complete this assignment, you should be familiar with the following concepts 
 
 Your task is to create a todo application that keeps track of a user’s task list. You will accomplish this by implementing the CRUD methods in the provided Todo.ts class skeleton.
 
-Todos (85%)
+## Todos (85%)
 >[!TIPS]
 >Read the Comments
 >I have left detailed comments in Todo.ts and Todo.test.ts. Please read them and then re-read them to get a solid understanding about what is expected from you.
@@ -70,7 +71,9 @@ function markComplete(): Promise<void>{}
 
 While implementing the methods, refer to the Jest test suite (./tests/Todo.test.ts) to guide your development process. Make sure all tests pass before considering the assignment complete.
 
-> [!CAUTION] **Tests are a Guide**
+> [!CAUTION] 
+>
+> **Tests are a Guide**
 >
 > Passing all the tests is not an indicator for obtaining 100%. Granted, when you do pass all the tests it’s definitely a good sign. However, the tests are provided as an aide for you to guide your development.
 
@@ -108,4 +111,10 @@ To submit your assignment, follow these steps:
    git push
    ```
 
-   
+3. Submit your assignment on Gradescope.
+
+	1. Accept the invitation to Gradescope in your [JAC email](https://outlook.com/) using your `studentid@johnabbottcollege.net` address.
+	2. Go to Gradescope (TBD, I’ll update this to a link when its ready) and click the link for this assignment.
+	3. Select the correct repository and branch from the dropdown menus.
+	4. Click *Upload*.
+
