@@ -92,8 +92,7 @@ For a challenge, you can implement a subtodo feature. A subtodo is a smaller tas
 
 - There are subtodo tests in the test suite that you should uncomment.
 
-
-📥 Submission
+## 📥 Submission
 To submit your assignment, follow these steps:
 
 1. Commit your changes to the local repository:
