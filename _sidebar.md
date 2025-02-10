@@ -22,7 +22,11 @@
 
 - [Object Relational Mapping](Notes/Week3/orm.md)
 
-  **Guides**
+**Week 4**
+
+- [HTTP](Notes/Week4/http.md)
+
+**Guides**
 
 - [Environment Setup](Guides/environment-setup.md)
 - [Debugging](Guides/debugging.md)

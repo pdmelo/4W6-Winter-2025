@@ -12,9 +12,9 @@
 
 1. Using the terminal, navigate to your `~/web-ii/exercises/` folder.
 
-2. Go to [the repository for this exercise](https://github.com/JAC-CS-Web-Programming-II-W24/E2.1-HTTP-Template) and click `Code -> 📋` to copy the URL.
+2. Go to [the repository for this exercise](https://github.com/JAC-CS-Web-Programming-II-W25/E2.1-HTTP-Template) and click `Code -> 📋` to copy the URL.
 
-   ![Clone Repo](https://vikramsinghmtl.github.io/420-4W6-Web-Programming-II/_astro/1.2.1-Clone-Repo.-W8-wfh3_ZEnPXs.webp)
+   ![Clone Repo](../../images/2.1-githttp.png)
 
 3. Clone the Git repo from the CLI `git clone <paste URL from GitHub>` (without the angle brackets) or using a GUI client like [GitHub Desktop](https://desktop.github.com/).
 
@@ -32,9 +32,9 @@
 
 ## 🔍 Context
 
-Earlier this week we played the [HTTP Card Game](https://docs.google.com/presentation/d/1j94f45CtTBVbVBpiqrPPYib7dYfrAhCIxGjbFb5zGFA/edit?usp=sharing) to learn the basic aspects of HTTP. To review, please read [this chapter](https://vikramsinghmtl.github.io/420-4W6-Web-Programming-II/concepts/http/) in the notes before continuing as it will teach you the terminology and concepts you need to know for this exercise.
+Earlier this week we played the [HTTP Card Game](https://docs.google.com/presentation/d/1j94f45CtTBVbVBpiqrPPYib7dYfrAhCIxGjbFb5zGFA/edit?usp=sharing) to learn the basic aspects of HTTP. To review, please read [this chapter](../Notes/Week4/http/) in the notes before continuing as it will teach you the terminology and concepts you need to know for this exercise.
 
-![Overview](https://vikramsinghmtl.github.io/420-4W6-Web-Programming-II/_astro/2.1.1-Overview.w2XvfftX_Z1CU7X4.webp)
+![Overview](../../images/2.1-http-Overview.png)
 
 
 
@@ -46,14 +46,22 @@ Earlier this week we played the [HTTP Card Game](https://docs.google.com/present
 
    - Open your `server.ts` file and paste the following code to set up a basic Node.js web server with TypeScript types:
 
-   server.ts
+     server.ts
 
+   ```ts
+   import http, { IncomingMessage, ServerResponse } from "http"; // The core Node module we're using to build our server.
+   
+   const hostname = "127.0.0.1"; // or 'localhost'
+   const port = 3000;
+   
+   const server = http.createServer(  (req: IncomingMessage, res: ServerResponse) => {    // Request handling will come later!  
+    }
+                                   );
+   server.listen(port, hostname, () => { 
+       console.log(`Server running at http://${hostname}:${port}/`);
+   });
    ```
-   import http, { IncomingMessage, ServerResponse } from "http"; // The core Node module we're using to build our server.const hostname = "127.0.0.1"; // or 'localhost'const port = 3000;
-   const server = http.createServer(  (req: IncomingMessage, res: ServerResponse) => {    // Request handling will come later!  });
-   server.listen(port, hostname, () => {  console.log(`Server running at http://${hostname}:${port}/`);});
-   ```
-
+   
    - Start the server by running `npm run server`.
 
 ### Part 2: Processing Requests
@@ -64,6 +72,9 @@ Earlier this week we played the [HTTP Card Game](https://docs.google.com/present
 
    - In your cURL terminal, type: `curl -v http://localhost:3000/`
    - Examine the output; you’ll see *HTTP* headers and other details of the request/response exchange. *We haven’t set up response content yet, so don’t be surprised if the process hangs!*
+
+   ![server-connect](../../images/2.1http-server-connect.png)
+
    - Hit CTRL + C to exit the process.
 
 3. **Let’s Build an Actual Response**
@@ -72,7 +83,7 @@ Earlier this week we played the [HTTP Card Game](https://docs.google.com/present
 
    server.ts
 
-   ```
+   ```ts
    // Inside createServer(...)
    
    if (req.method === "GET" && req.url === "/") {
@@ -97,7 +108,6 @@ Earlier this week we played the [HTTP Card Game](https://docs.google.com/present
    
    }
    ```
-
    - **Save the file** to apply the changes. The server should automatically restart in the terminal.
    - Run the GET cURL command again (`curl -v http://localhost:3000/`); you should see our JSON response!
 
@@ -107,16 +117,22 @@ Earlier this week we played the [HTTP Card Game](https://docs.google.com/present
 
    - Add the Pokemon interface and sample data at the top of `server.ts`:
 
-   ```
-   interface Pokemon {  id: number;  name: string;  type: string;}
-   const database: Pokemon[] = [  // Add one Pokemon object here with ID 1.];
+   ```ts
+   interface Pokemon {  
+       id: number;  
+       name: string;  
+       type: string;
+   }
+   const database: Pokemon[] = [  
+       // Add one Pokemon object here with ID 1.
+   ];
    ```
 
 2. **GET All Pokemon**
 
    - Enhance the `GET /` route:
 
-   ```
+   ```ts
    if (req.method === "GET" && req.url === "/") {
    
      // ... (Existing code remains the same)
@@ -151,11 +167,26 @@ Earlier this week we played the [HTTP Card Game](https://docs.google.com/present
 
    server.ts
 
-   ```
-   // ... Inside createServer (...)else if (req.method === 'GET' && req.url?.startsWith('/pokemon/')) {    // Find Pokemon by ID    const urlParts = req.url.split('/');    const pokemonId = parseInt(urlParts[2]);
+   ```ts
+   // ... Inside createServer (...)
+   else if (req.method === 'GET' && req.url?.startsWith('/pokemon/')) {    
+       // Find Pokemon by ID    
+       const urlParts = req.url.split('/');    
+       const pokemonId = parseInt(urlParts[2]);
+       
        const foundPokemon = database.find(pokemon => pokemon.id === pokemonId);
-       if (foundPokemon) {        res.statusCode = 200;        res.setHeader('Content-Type', 'application/json');        res.end(JSON.stringify({ message: 'Pokemon found', payload: foundPokemon }, null, 2));    } else {        res.statusCode = 404;        res.end(JSON.stringify({ message: 'Pokemon not found' }, null, 2));    }
-   } else if (req.method === 'GET' && req.url === '/pokemon') {    // Existing: Get all Pokemon ...}
+       
+       if (foundPokemon) {
+           res.statusCode = 200;        
+           res.setHeader('Content-Type', 'application/json');        
+           res.end(JSON.stringify({ message: 'Pokemon found', payload: foundPokemon }, null, 2));    
+       } else {        
+               res.statusCode = 404;        
+               res.end(JSON.stringify({ message: 'Pokemon not found' }, null, 2));
+           }
+   } else if (req.method === 'GET' && req.url === '/pokemon') {   
+       // Existing: Get all Pokemon ...
+   }
    ```
 
    - Try it!
@@ -177,17 +208,30 @@ Earlier this week we played the [HTTP Card Game](https://docs.google.com/present
 
    server.ts
 
+   ```ts
+   // ... Inside createServer(...)
+   else if (req.method === 'POST' && req.url === '/pokemon') {    
+       let body = ''; // To store incoming data    
+       req.on('data', (chunk) => {        
+           body += chunk.toString();    
+       });
+       
+       req.on('end', () => {        
+           const newPokemon = JSON.parse(body);
+           // Add basic data logic (you'd likely use a database in a real application)        
+           newPokemon.id = database.length + 1; // Simple ID assignment         
+           database.push(newPokemon);
+           res.statusCode = 201; // 'Created'        
+           res.setHeader('Content-Type', 'application/json');        
+           res.end(JSON.stringify({ message: 'Pokemon created!', payload: newPokemon }, null, 2));    
+       });
+   }
    ```
-   // ... Inside createServer(...)else if (req.method === 'POST' && req.url === '/pokemon') {    let body = ''; // To store incoming data    req.on('data', (chunk) => {        body += chunk.toString();    });
-       req.on('end', () => {        const newPokemon = JSON.parse(body);
-           // Add basic data logic (you'd likely use a database in a real application)        newPokemon.id = database.length + 1; // Simple ID assignment        database.push(newPokemon);
-           res.statusCode = 201; // 'Created'        res.setHeader('Content-Type', 'application/json');        res.end(JSON.stringify({ message: 'Pokemon created!', payload: newPokemon }, null, 2));    });}
-   ```
-
+   
    - In your cURL terminal, send a POST request:
-
+   
    Terminal window
-
+   
    ```
    curl -v -X POST -H "Content-Type: application/json" \
    
@@ -195,13 +239,14 @@ Earlier this week we played the [HTTP Card Game](https://docs.google.com/present
    
         http://localhost:3000/pokemon
    ```
-
+   
    - You should see your success response! Check your `GET /pokemon` to see if the new addition is there.
 
-Important Considerations
-
-- **Error Handling:** A production server would include checks for bad data format, invalid input, etc.
-- **Data Persistence:** Currently, new Pokemon are only held in memory. Restarting the server wipes them out. A real app would use a database!
+> [!IMPORTANT]
+>
+> Important Considerations
+> - **Error Handling:** A production server would include checks for bad data format, invalid input, etc.
+> - **Data Persistence:** Currently, new Pokemon are only held in memory. Restarting the server wipes them out. A real app would use a database!
 
 ### Part 4: Updating Pokemon (PUT)
 
