@@ -25,11 +25,13 @@
 **Week 4**
 
 - [HTTP](Notes/Week4/http.md)
+- [2.1 HTTP Exercise](Notes/Week4/21-http.md)
 
 **Guides**
 
 - [Environment Setup](Guides/environment-setup.md)
 - [Debugging](Guides/debugging.md)
 - [Testing](Guides/testing.md)
+- [TypeScript](Guides/typescript.md)
 - [PostresSQL](Guides/database.md)
 - [Troubleshooting](Guides/troubleshooting.md)
