@@ -32,7 +32,7 @@
 
 ## 🔍 Context
 
-Earlier this week we played the [HTTP Card Game](https://docs.google.com/presentation/d/1j94f45CtTBVbVBpiqrPPYib7dYfrAhCIxGjbFb5zGFA/edit?usp=sharing) to learn the basic aspects of HTTP. To review, please read [this chapter](../Notes/Week4/http/) in the notes before continuing as it will teach you the terminology and concepts you need to know for this exercise.
+Earlier this week we played the [HTTP Card Game](https://docs.google.com/presentation/d/1gYP2idYRLvMbEN4htfPwWssMf1nKX53qmY_f4crH8Pg/edit?usp=sharing) to learn the basic aspects of HTTP. To review, please read [this chapter](Notes/Week4/http) in the notes before continuing as it will teach you the terminology and concepts you need to know for this exercise.
 
 ![Overview](../../images/2.1-http-Overview.png)
 
@@ -109,7 +109,10 @@ Earlier this week we played the [HTTP Card Game](https://docs.google.com/present
    }
    ```
    - **Save the file** to apply the changes. The server should automatically restart in the terminal.
+   
    - Run the GET cURL command again (`curl -v http://localhost:3000/`); you should see our JSON response!
+   
+     (Psst..you view tihis on your browser too http://localhost:3000/ 😊)
 
 ### Part 3: Expanding our Pokemon API
 

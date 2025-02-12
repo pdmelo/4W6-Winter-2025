@@ -4,6 +4,8 @@
 
 - `\c <db name>`: connect to a certain database
 
+- `\q` : exits psql completely
+
 - `\dt`: list all tables in the current database
 
 - This deletes all rows and resets identity sequences
