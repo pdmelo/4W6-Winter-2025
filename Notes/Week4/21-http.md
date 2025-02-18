@@ -112,7 +112,7 @@ Earlier this week we played the [HTTP Card Game](https://docs.google.com/present
    
    - Run the GET cURL command again (`curl -v http://localhost:3000/`); you should see our JSON response!
    
-     (Psst..you view tihis on your browser too http://localhost:3000/ 😊)
+     (Psst..you can view this on your browser too http://localhost:3000/ 😊)
 
 ### Part 3: Expanding our Pokemon API
 
