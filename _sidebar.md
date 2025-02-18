@@ -27,6 +27,11 @@
 - [HTTP](Notes/Week4/http.md)
 - [2.1 HTTP Exercise](Notes/Week4/21-http.md)
 
+**Week 5**
+
+- [Routing](Notes/Week5/routing.md)
+- [2.2 Routing Exercise](Notes/Week5/22-routing.md)
+
 **Guides**
 
 - [Environment Setup](Guides/environment-setup.md)

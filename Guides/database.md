@@ -15,4 +15,4 @@
   
   ```
 
-  
+- [multiple-inserts-in-one-query](https://github.com/porsager/postgres?tab=readme-ov-file#multiple-inserts-in-one-query)
