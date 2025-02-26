@@ -1,6 +1,7 @@
 **Assignments**
 
 - [1-Models](Assignments/1-models.md)
+- [2-Controllers](Assignments/2-controllers.md)
 
 **Week 1**
 
@@ -31,6 +32,10 @@
 
 - [Routing](Notes/Week5/routing.md)
 - [2.2 Routing Exercise](Notes/Week5/22-routing.md)
+
+**Week 6**
+
+- [2.3 Express Exercise](Notes/Week6/23-express.md)
 
 **Guides**
 

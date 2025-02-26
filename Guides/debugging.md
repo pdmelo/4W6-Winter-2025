@@ -12,7 +12,7 @@
 
 ![Breakpoint](../images/2.2debugg-bp.png)
 
-4. Run your code again and the program should pause its execution on the line which you set the breakpoint.
+4. Run your code and the program should pause its execution on the line which you set the breakpoint.
 
 5. Click on the debugger tab on the left navigation and you should see a list of all the current variables and their values. 
            ![Variables](../images/2.3-debugger-variables.png)  
