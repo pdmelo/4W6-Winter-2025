@@ -15,7 +15,7 @@
 ## 🔨 Setup
 
 1. [Click here](https://classroom.github.com/a/izRhndQP) to join the Git classroom.
-2. Clone (do not download as a zip) the starter repository from GitHub. Make sure you use the link from Moodle to fork the proper repository.
+2. Clone (do not download as a zip) the starter repository from GitHub. Make sure you use the link to fork the proper repository.
 3. Make sure Docker Desktop is open.
 4. Start the development container in VS Code by using the `Dev Containers: Open Folder in Container...` command from the Command Palette (CTRL/CMD+SHIFT+P) and select the cloned directory.
 5. Run the `npm install` in the terminal to install all necessary dependencies.
@@ -236,5 +236,5 @@ git push
 ```
 3. Submit your assignment on Gradescope.
         1. Go to Gradescope, log in, and click the link for this assignment.
-            2. Select the correct repository and branch from the dropdown menus. 
-            3. Click *Upload*.
+        2. Select the correct repository and branch from the dropdown menus. 
+        3. Click *Upload*.
