@@ -37,6 +37,7 @@
 **Week 6**
 
 - [Jest Unit Testing](Notes/Week6/jesttesting.md)
+- [2.3 Jest UT Exercise](Notes/Week6/23testing.md)
 
 
 **Guides**
