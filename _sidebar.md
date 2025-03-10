@@ -33,14 +33,24 @@
 - [Routing](Notes/Week5/routing.md)
 - [2.2 Routing Exercise](Notes/Week5/22-routing.md)
 
-
 **Week 6**
 
 - [Jest Unit Testing](Notes/Week6/jesttesting.md)
 - [2.3 Jest UT Exercise](Notes/Week6/23testing.md)
 
+**Week 7**
 
-**Guides**
+- [2.4 Express](Notes/Week7/24-express.md)
+<!--- [MongoDB](Notes/Week7/mongodb.md)
+- [2.5 MongoDB Exercise](Notes/Week7/25-mongodb.md)
+
+**Week 8**
+
+- [React](Notes/Week8/intro-react.md)
+- [3.1 JSX Exercise](Notes/Week8/31-jsx.md)
+- [3.1 Hooks Exercise](Notes/Week8/32-jsx.md)
+  -->
+  **Guides**
 
 - [Environment Setup](Guides/environment-setup.md)
 - [Debugging](Guides/debugging.md)
