@@ -41,16 +41,8 @@
 **Week 7**
 
 - [2.4 Express](Notes/Week7/24-express.md)
-<!--- [MongoDB](Notes/Week7/mongodb.md)
-- [2.5 MongoDB Exercise](Notes/Week7/25-mongodb.md)
 
-**Week 8**
-
-- [React](Notes/Week8/intro-react.md)
-- [3.1 JSX Exercise](Notes/Week8/31-jsx.md)
-- [3.1 Hooks Exercise](Notes/Week8/32-jsx.md)
-  -->
-  **Guides**
+**Guides**
 
 - [Environment Setup](Guides/environment-setup.md)
 - [Debugging](Guides/debugging.md)
