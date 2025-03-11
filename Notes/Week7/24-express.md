@@ -12,17 +12,17 @@
 
 1. Navigate to your project folder:
 
-   ```sh
+   ```bash
    cd ~/web-ii/exercises/
    ```
 
-2. Go to [the repository for this exercise]) and click `Code -> 📋` to copy the URL.
+2. Go to [the repository for this exercise](https://github.com/JAC-CS-Web-Programming-II-W25/E2.4-Express-Template) and click `Code -> 📋` to copy the URL.
 
-   ```sh
+   ```bash
    git clone <paste URL from GitHub>
    ```
 
-3. Rename the cloned folder to `~/web-ii/exercises/2.3-express/`
+3. Rename the cloned folder to `~/web-ii/exercises/2.4-express/`
 
 4. Start Docker Desktop.
 
@@ -32,12 +32,9 @@
 
 7. Run `npm install` to install all our dependencies.
 
-
 ## 🔍 Context
 
 We previously explored the fundamentals of HTTP And router using Node.js's `http` module. Now, we will use **[Express]((https://expressjs.com/)**, a minimal framework that simplifies server creation and request handling.
-
-
 
 ## 🚦 Let’s Go
 
@@ -47,56 +44,56 @@ We will separate the server starter from all routing information.
 
 1. Create a new file `server.ts` and add the following code:
 
-   ```ts
+   ```typescript
    import express from "express";
    import pokemonRouter from "./router";
    import { getHome } from "./controller"; // ideally should not be in the controller.
-   
+
    const app = express();
    const port = 3000;
-   
+
    // Middleware to parse incoming JSON requests
    app.use(express.json());
-   
+
    /**
     * Home route
     * Responds with a welcome message when the root URL is accessed.
     */
    app.get("/", getHome);
-   
+
    app.use("/pokemon", pokemonRouter);
    /**
     * Starts the Express server and listens on the specified port.
     */
    app.listen(port, () => {
-   	console.log(`Server running at http://localhost:${port}/`);
+     console.log(`Server running at http://localhost:${port}/`);
    });
    ```
 
 2. Start the server by running:
 
-   ```sh
+   ```bash
     npm run server
    ```
 
 3. Test with cURL:
 
-   ```sh
+   ```bash
    curl -X GET http://localhost:3000/
    ```
 
 ### Part 2: Route Data Structures & Registration
 
-1. In the  router.ts define your route for the endpoints. :
+1. In the router.ts define your route for the endpoints. :
 
    ```ts
    import { Router } from "express";
    import {
-   	createPokemon,
-   	deletePokemon,
-   	getAllPokemon,
-   	getOnePokemon,
-   	updatePokemon,
+     createPokemon,
+     deletePokemon,
+     getAllPokemon,
+     getOnePokemon,
+     updatePokemon,
    } from "./controller";
    
    const pokemonRouter: Router = Router();
@@ -116,18 +113,20 @@ We will separate the server starter from all routing information.
 
 ### Part 2: Updating the Controller to work with express
 
-The http module is replaced with express. Most of the code from the previous exercise remains the same. Pay attention to the express responses. 
+The http module is replaced with express. Most of the code from the previous exercise remains the same. Pay attention to the express responses.
 
-   - You dont  need the req.on and req.end as this is automatically handled by express.   
-   - Express automatically handles request body parsing when using express.json().
-   - Directly accesses req.body instead of manually collecting chunks.
+- You dont need the req.on and req.end as this is automatically handled by express.
+- Express automatically handles request body parsing when using express.json().
+- Directly accesses req.body instead of manually collecting chunks.
 
-```
+```typescript
 import { Request, Response } from "express";
 ```
-------
 
-### **Testing**  
+---
+
+### **Testing**
+
 Using cURL, test all your routes to ensure everything is working so far. For example::
 
 ```bash
@@ -142,13 +141,13 @@ curl -v -X PUT -H "Content-Type: application/json" -d '{"type": "Poison"}' http:
 curl -v -X DELETE http://localhost:3000/pokemon/1
 
 ```
+
 ## Conclusion
 
 - Express provides a simpler and more scalable way to build HTTP servers compared to the `http` module.
 
 - Middleware like `express.json()` makes request parsing easier.
 
-  
 ## 📚 Submission
 
 1. Perform the following cURL operations without the `-v` flag:
