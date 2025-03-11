@@ -46,7 +46,7 @@ Move each route-specific block under your giant `if` statement from the last exe
 
 controller.ts
 
-```ts
+```tsx
 /** * TODO: Copy the route handling logic from the previous exercise * into these functions. You will need to use the database array from * the model.ts file to handle the requests.
 */
 
@@ -85,7 +85,7 @@ export const getAllPokemon = (req: IncomingMessage, res: ServerResponse) => {
 
    server.ts
 
-   ```ts
+   ```tsx
    interface Routes {
    
      [method: string]: {
