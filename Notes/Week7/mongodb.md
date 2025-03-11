@@ -4,20 +4,20 @@
 
 A NoSQL database designed for high performance and scalability
 Uses a document-based model instead of tables and rows
-Stores data in JSON-like BSON format
-📌 Key Features
-✅ Flexible Schema – No fixed structure, making it adaptable
-✅ Scalability – Supports horizontal scaling with sharding
-✅ High Performance – Optimized for fast reads and writes
-✅ Rich Query Language – Supports filtering, aggregation, indexing
+Stores data in JSON-like BSON format <br>
+📌 **Key Features**
+-   Flexible Schema – No fixed structure, making it adaptable
+-   Scalability – Supports horizontal scaling with sharding
+-  High Performance – Optimized for fast reads and writes
+-  Rich Query Language – Supports filtering, aggregation, indexing
 
-📌 MongoDB Atlas – Cloud-Based Solution
+📌 **MongoDB Atlas – Cloud-Based Solution**
 
 - MongoDB Atlas is an online Database-as-a-Service (DBaaS)
 
 - Enables companies to deploy into the cloud quickly and efficiently
 
-📌 MongoDB in Full-Stack Development
+📌**MongoDB in Full-Stack Development**
 
 - Works seamlessly with:
 
@@ -59,7 +59,7 @@ Click here to read more on the [Database](https://www.mongodb.com/databases/non-
 - In NoSQL, each "piece" of data is stored in a single **document**. 
   - This may have multiple fields of information,
 
-  - A document roughly corresponds to a row of information in a SQL database
+  - A document roughly corresponds to a ***row of information in a SQL database***
 
   - The fields roughly correspond to the columns in a SQL database
 
@@ -75,51 +75,57 @@ MongoDB - [Unstructured-data](https://www.mongodb.com/unstructured-data)
 
 ##  ⚙️MongoDB Operations
 MongoDb offers a variety of queries that support CRUD operations.  These are similar in capability to MySQL operations, but the details/syntax are quite different.
-https://www.mongodb.com/docs/drivers/node/current/usage-examples 
-https://mongodb.github.io/node-mongodb-native/4.13/classes/Collection.html
+- [Usage Example](https://www.mongodb.com/docs/drivers/node/current/usage-examples)
+- [Collection](https://mongodb.github.io/node-mongodb-native/4.13/classes/Collection.html)
 
 ### Common operations include:
 
 **Create:**
-collection.insertOne()
-collection.insertMany()
+- collection.insertOne()
+- collection.insertMany()
 
 **Read**
-collection.findOne()
-collection.find()
+- collection.findOne()
+- collection.find()
 
 **Update**
-collection.updateOne()
-collection.updateMany()
-collection.replaceOne()
+- collection.updateOne()
+- collection.updateMany()
+- collection.replaceOne()
 
 **Update**
-collection.deleteOne()
-collection.deleteMany()
+- collection.deleteOne()
+- collection.deleteMany()
 
 **Additional operations include:**
-collection.findById()
-collection.findByIdAndDelete()
-collection.findByIdAndRemove()
-collection.findByIdAndUpdate()
-collection.findOneAndDelete()
-collection.findOneAndRemove()
-collection.findOneAndReplace()
-collection.findOneAndUpdate()
-collection.countDocuments()
 
-🔍**More advanced:**
-- 	Sort
-- 	Join
+- collection.findById()
+- collection.findByIdAndDelete()
+- collection.findByIdAndRemove()
+- collection.findByIdAndUpdate()
+- collection.findOneAndDelete()
+- collection.findOneAndRemove()
+- collection.findOneAndReplace()
+- collection.findOneAndUpdate()
+- collection.countDocuments()
+
+🔍**More Methods:**
+More methods can be found [here](https://www.mongodb.com/docs/manual/reference/method/)
+
+`Sorting` and `Filtering` can be done using [Aggregation](https://www.mongodb.com/docs/manual/reference/operator/aggregation/)
 
 ## MongoDB and TypeScript
 
-https://www.mongodb.com/resources/products/compatibilities/using-typescript-with-mongodb-tutorial
+[Tutorial: using MongoDB with Typescript](https://www.mongodb.com/resources/products/compatibilities/using-typescript-with-mongodb-tutorial)
+
+
+
+## MongoDB Setup
+
+ Visit [MongoDB's official website](https://www.mongodb.com/) and either set up a local MongoDB server or create a free account on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). In our section, we will setting up the Mongodb on the docker.
 
 ## 📚 Resources
 
 - https://www.w3schools.com/nodejs/nodejs_mongodb.asp 
-
 - https://www.npmjs.com/package/mongodb 
-
 - https://mongodb.github.io/node-mongodb-native 

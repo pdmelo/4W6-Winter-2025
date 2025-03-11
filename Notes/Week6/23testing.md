@@ -42,7 +42,7 @@ Jest allows testing asynchronous code using promises, async/await, and callbacks
 
 Lets create jest test for the `app.ts` application in the `src` folder
 
-Create a new file in the `tests` folder `tests/app.test.js`
+Create a new file in the `tests` folder `tests/app.test.ts`
 
 - This **naming convention** is important. The name of the test file matches the name of the file you are testing with the insertion of '.test' before '.ts'
 
@@ -73,7 +73,7 @@ test(label-for-the-test, async () => {
 const { name, type } = createPokemonData();
 <call createPokemon function>
 <get results from database file>
-<use ‘expect’ to check the results> 
+<use ‘expect’ to check the results>
 });
 ```
 
@@ -101,7 +101,7 @@ describe("Pokemon CRUD Operations", () => {
 
 		expect(database).toContainEqual({ name: "Pikachu", type: "Electric" });
 	});//eof test1
-	
+
 });//eof test suite
 
 ```
@@ -111,20 +111,24 @@ Run the test:
 ```
 npm test
 ```
+
 To run an individual test, you can use the `--testNamePattern` option with `npm test`. For example, to run a test with the name “Pokemon was created.”, you can use the following command:
 
 ```
 npm test --testNamePattern = "Pokemon was created"
 ```
+
 here is an example to test to fetch Pokemons
+
 ```ts
 test("Pokemon retrieve Pokemon after adding", async () => {
-		const pokemon = { name: "Pikachu", type: "Electric" };
-		await createPokemon(pokemon);
-		const result = await fetchPokemon();
-		expect(result).toEqual([{ name: "Pikachu", type: "Electric" }]);
-	});
+  const pokemon = { name: "Pikachu", type: "Electric" };
+  await createPokemon(pokemon);
+  const result = await fetchPokemon();
+  expect(result).toEqual([{ name: "Pikachu", type: "Electric" }]);
+});
 ```
+
 Run the test:
 
 ```
@@ -133,7 +137,7 @@ npm test
 
 ### Part 2: Testing a Function that Rejects
 
-#### 1. An example of  a rejected promise
+#### 1. An example of a rejected promise
 
 ```ts
 export async function fetchPokemonWithError(): Promise<never> { {
@@ -159,11 +163,12 @@ npm test
 
 ## 📥 Submission
 
-1. Write the following Jest tests and ensure all pass:
+1. Write the following Jest tests and ensure all 8 pass:
    1. `createPokemon` adds a new Pokémon.
    2. `fetchPokemon` logs the database.
-   3. `updatePokemon` with a test for throw error if pokemon is not found
-   4. `deletePokemon` with test for throw error if pokemon is not found
-   5. `fetchPokemonWithError` properly throws an error.
+   3. `addPokemon` logs the database.
+   4. `updatePokemon` with a test for throw error if pokemon is not found
+   5. `deletePokemon` with a test for throw error if pokemon is not found
+   6. `fetchPokemonWithError` properly throws an error.
 2. Take a screenshot of your Jest output showing the successful test results.
 3. Submit the screenshot to the Moodle dropbox for this exercise.
