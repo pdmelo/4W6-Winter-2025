@@ -39,7 +39,7 @@ Popular in modern web apps, IoT, and AI/ML applications
 ## 🆚NoSQL vs SQL
 
 ### 🗃️ SQL
-- A **SQL ** database, like MySQL, is a **relational** database. This means that data is stored in in a structured format, usually called **tables**, containing specific pieces and types of data. Relationships are explicitly made between these tables. That is why you have foreign keys, joins, etc. along with the idea of one-to-one, one-to-many, many-to-one and many-to-many relationships.
+- A **SQL** database, like MySQL, is a **relational** database. This means that data is stored in in a structured format, usually called **tables**, containing specific pieces and types of data. **Relationships** are explicitly made between these tables. That is why you have foreign keys, joins, etc. along with the idea of one-to-one, one-to-many, many-to-one and many-to-many relationships.
   - A SQL database works best when the data they contain doesn't change very often, and when accuracy is crucial.
 
 
@@ -54,7 +54,7 @@ Popular in modern web apps, IoT, and AI/ML applications
 
   ![mongdo-format](../../images/mongodb1.png)
 
-Click here to read more on the [Database](https://www.mongodb.com/databases/non-relational)
+Click here to read more on the [Non-Relational Database](https://www.mongodb.com/databases/non-relational)
 
 - In NoSQL, each "piece" of data is stored in a single **document**. 
   - This may have multiple fields of information,
@@ -68,7 +68,7 @@ Click here to read more on the [Database](https://www.mongodb.com/databases/non-
 
 - A non-relational database can be massive and can grow exponentially in principle. Since new data in different formats can be added at any time, it is highly flexible to use.
 
-- 80 to 90% of data generated and collected by organizations is unstructured, and its volumes are growing rapidly.
+- 80 to 90% of data generated and collected by organizations is unstructured, and its volumes are growing rapidly. Companies like Netflix, Uber,Airbnb
 
 MongoDB - [Unstructured-data](https://www.mongodb.com/unstructured-data)
 
