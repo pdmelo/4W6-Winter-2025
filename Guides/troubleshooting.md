@@ -33,3 +33,24 @@ Navigate to the directory where your docker-compose.yml file is located in, i.e 
 2. Click on “Dev Containers”.
 3. Click on “Switch to Pre-Release”.
 4. Click on “Reload”.
+
+## 5.Typescript Error
+```Bash
+Cannot find type definition file for 'express'.
+  The file is in the program because:
+    Entry point of type library 'express' specified in compilerOptionsts
+Cannot find type definition file for 'node'.
+  The file is in the program because:
+    Entry point of type library 'node' specified in compilerOptionsts
+```
+
+**Solution:**
+
+Opening any TS file > CMD + SHIFT + P >  on mac OR CRTL + SHIFT + P on windows 
+
+```bash
+TypeScript: Restart TS Server
+```
+
+
+

@@ -41,6 +41,8 @@
 **Week 7**
 
 - [2.4 Express](Notes/Week7/24-express.md)
+- [MongoDB](Notes/Week7/mongodb.md)
+- [2.5 MongoDB Exercise](Notes/Week7/25-mongodb.md)
 
 **Guides**
 
