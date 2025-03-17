@@ -38,7 +38,13 @@
 
 ## 🔍 Context
 
-We previously explored the fundamentals of HTTP And router using Node.js's `http` module. Now, we will use **[Express]((https://expressjs.com/)**, a minimal framework that simplifies server creation and request handling.
+We previously explored the fundamentals of HTTP And router using Node.js's `http` module. Now, we will use **[Express](https://expressjs.com/)**, a minimal framework that simplifies server creation and request handling.
+
+Express Router:
+
+- Helps organize routes into separate files for better maintainability.
+- Makes the codebase cleaner and easier to manage.
+- Enables modular route handling, which is useful for large applications.
 
 ## 🚦 Let’s Go
 
@@ -52,7 +58,7 @@ We will separate the server starter from all routing information.
 
    > [!NOTE]
    >
-   > Middleware in Express.js is a function that sits between the request and the response. It processes incoming requests before they reach the final route handler. 
+   > Middleware in Express.js is a function that sits between the request and the response. It processes incoming requests before they reach the final route handler.
    >
    > Middleware functions can:
    >
@@ -67,19 +73,19 @@ We will separate the server starter from all routing information.
    import express from "express";
    import pokemonRouter from "./router";
    import { getHome } from "./controller"; // ideally should not be in the controller.
-   
+
    const app = express();
    const port = 3000;
-   
+
    // Middleware to parse incoming JSON requests
    app.use(express.json());
-   
+
    /**
     * Home route
     * Responds with a welcome message when the root URL is accessed.
     */
    app.get("/", getHome);
-   
+
    app.use("/pokemon", pokemonRouter);
    /**
     * Starts the Express server and listens on the specified port.
@@ -141,7 +147,23 @@ The http module is replaced with express. Most of the code from the previous exe
 ```typescript
 import { Request, Response } from "express";
 ```
+Consider using 
+- `req.body`, dont have to convert to string, becuase the middleware does it for you .
 
+- `req.params.id` to extract the id, 
+
+-  `req.query` to extract filters example: 
+	
+	````typescript
+	const { type, sortBy, order } = req.query;
+	
+-  You don't need to use `res.send` nor set the headers. Please make time to read more about the **Request** and **Response** components of Express. For example for getAll
+   
+   ```typescript
+    res.status(200).json({ message: "All Pokemon", payload: newDatabase });
+   ```
+   
+   
 ---
 
 ### **Testing**
