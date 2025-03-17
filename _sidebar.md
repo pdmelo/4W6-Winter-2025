@@ -44,7 +44,14 @@
 - [MongoDB](Notes/Week7/mongodb.md)
 - [2.5 MongoDB Exercise](Notes/Week7/25-mongodb.md)
 
-**Guides**
+**Week 8**
+
+- [Templates](Notes/Week8/templates.md)
+- [React](Notes/Week8/intro-react.md)
+- [3.1 JSX Exercise](Notes/Week8/31-jsx.md)
+- [3.1 Hooks Exercise](Notes/Week8/32-jsx.md)
+
+  **Guides**
 
 - [Environment Setup](Guides/environment-setup.md)
 - [Debugging](Guides/debugging.md)
