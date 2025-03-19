@@ -8,9 +8,7 @@
 
 3. **Implement** components using Classes and Functions.
 
-
 ## 🔨 Setup
-
 
 1. Using the terminal, navigate to your `~/web-ii/exercises/` folder.
 2. Go to [the repository for this exercise](https://github.com/JAC-CS-Web-Programming-II-W25/E3-React-Template) and click `Code -> 📋` to copy the URL.
@@ -20,10 +18,8 @@
 5. Start Docker Desktop.
 6. Make time to go through the folder structure.
 7. In VS Code, hit `CMD/CTRL + SHIFT + P` and search + run `dev container: open folder in container`.
-7. In the terminal of VS Code, hit the `+` icon to open a new terminal instance. Run `ls` to make sure you’re in the root directory of the exercise and you see `client` and `server` folders.
-9. cd to `client`  to run  `npm run dev` to start the react server.
-
-
+8. In the terminal of VS Code, hit the `+` icon to open a new terminal instance. Run `ls` to make sure you’re in the root directory of the exercise and you see `client` and `server` folders.
+9. cd to `client` to run `npm run dev` to start the react server.
 
 ## Part 1: Understanding the JSX Syntax
 
@@ -31,60 +27,71 @@ The `App.jsx` is the entry point to the React application.
 
 ### **1. Declaring a Variable and Using JSX**
 
-1. Open `src/App.jsx`and and declare a variable `name` with a value and replace the h1 html tag,  see example below:
+1. Open `src/App.jsx`and and declare a variable `name` with a value and replace the h1 html tag, see example below:
 
-  ```jsx
-  import React from "react";
-  
-  function App = () => {
-    const name = "Pokemons!";
-    return (
-      <div>
-        <h1>Meet my {name}</h1>
-      </div>
-    );
-  };
-  
-  export default App;
-  ```
+```jsx
+import React from "react";
+
+function App = () => {
+  const name = "Pokemons!";
+  return (
+    <div>
+      <h1>Meet my {name}</h1>
+    </div>
+  );
+};
+
+export default App;
+```
+
 2. You can also embed styles in the html, lets make the name italics and add colour to it.
 
    ```jsx
-   <h1>Meet the <i style={{color:"SteelBlue"}}>{name}</i></h1>
+   <h1>
+     Meet the <i style={{ color: "SteelBlue" }}>{name}</i>
+   </h1>
    ```
->[!NOTE]
->The **double curly brackets** on the style:
->
->- {color:"SteelBlue"}  is a javascript object 
->- JSX requires an extra set of `{}` to embed JavaScript expressions. hence the {{color:"SteelBlue"}}
+
+   > [!NOTE]
+   > The **double curly brackets** on the style:
+   >
+   > - {color:"SteelBlue"} is a javascript object
+   > - JSX requires an extra set of `{}` to embed JavaScript expressions. hence the {{color:"SteelBlue"}}
 
 3. Adding other html tags like a button
 
    ```jsx
-   <button className="outline" onClick={()=> alert('Hi there')}>Click Me</button>
+   <button className="outline" onClick={() => alert("Hi there")}>
+     Click Me
+   </button>
    ```
+
    **Key Points:**
 
 - JSX allows embedding JavaScript expressions within curly braces `{}`.
 - It’s used to render HTML-like elements inside the JavaScript code.
 
 ## Part 2: Creating Reusable Components
+
 React components can be defined in multiple ways. Let's explore two common methods.
 
 ### **Method 1 : Class Components**
+
 A React component can be created using a class. The class name should start with an uppercase letter and extend `React.Component`
 
 ```jsx
 class Welcome extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-	render() {
-		return <h1>Meet my {this.props.name}</h1>;
-	}
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <h1>Meet my {this.props.name}</h1>;
+  }
 }
 ```
+
 Now, replace the `<h1>` tag in the `App()` function with the Component class, delete the previous `name`declaration:
+
 ```
 <Welcome name="Pokemons" />
 ```
@@ -95,9 +102,10 @@ Functional components are simpler and more commonly used in modern React:
 
 ```jsx
 function Greeting(props) {
-	return <h1>Hello {props.name}</h1>;
+  return <h1>Hello {props.name}</h1>;
 }
 ```
+
 ** Key Points:**
 
 - The `Greeting` component accepts a `name` prop and dynamically displays the greeting message.
@@ -107,29 +115,30 @@ Update your `App` function to include both components:
 
 ```jsx
 return (
-		<div className="container">
-			<article>
-				<hgroup>
-					<Welcome name="Pokemons" />
-					<Greeting name="Pikachu" />
-					<p>
-						Each with <b>unique abilities </b> and                                                   personalities.<br/>
-					    Together, we embark on <b>countless adventures</b> and
-						face every challenge that comes our way.
-					</p>
-				</hgroup>
-                <button onClick={() => alert("Hi there")}>Click Me
-					</button>
-			</article>
-		</div>
-	);
+  <div className="container">
+    <article>
+      <hgroup>
+        <Welcome name="Pokemons" />
+        <Greeting name="Pikachu" />
+        <p>
+          Each with <b>unique abilities </b> and personalities.
+          <br />
+          Together, we embark on <b>countless adventures</b> and face every
+          challenge that comes our way.
+        </p>
+      </hgroup>
+      <button onClick={() => alert("Hi there")}>Click Me</button>
+    </article>
+  </div>
+);
 ```
+
 **Key Points:**
 
 - The `Greeting` component accepts a `name` prop and dynamically displays the greeting message.
--  Props allow components to receive dynamic values.
--  The `<hgroup>` tag is **used to surround a heading and one or more `<p> `elements**.
--  `name="Pokemons"` is passed as a prop, and you access Props via `props` object  using `props.name`
+- Props allow components to receive dynamic values.
+- The `<hgroup>` tag is **used to surround a heading and one or more `<p> `elements**.
+- `name="Pokemons"` is passed as a prop, and you access Props via `props` object using `props.name`
 
 ## Part 3 Sending multiple props.
 
@@ -141,36 +150,35 @@ Inside `Welcome.jsx`, access the props as follows:
 
 ```jsx
 export default function Welcome(props) {
-	return (
-		<h1 style={{ color: props.color }}>
-			Hello <i>{props.name}</i>{" "}
-		</h1>
-	);
+  return (
+    <h1 style={{ color: props.color }}>
+      Hello <i>{props.name}</i>{" "}
+    </h1>
+  );
 }
 ```
-
-
-
 
 ## Part 4: Working with Lists and JSX
 
 ### 1. **Without using a component.**
+
 Modify `App.jsx` to render a list of Pokemons
 
-Declare an  array `myPokemons` with some values. Display the `myPokemons` array in your App component  using the .map() function to render the list directly inside JSX. 
+Declare an array `myPokemons` with some values. Display the `myPokemons` array in your App component using the .map() function to render the list directly inside JSX.
 
 ```jsx
-			<ul>
-			  {myPokemons.map((pokemon, index) => (
-					<li key={index}>{pokemon}</li>
-				))}
-			</ul>
+<ul>
+  {myPokemons.map((pokemon, index) => (
+    <li key={index}>{pokemon}</li>
+  ))}
+</ul>
 ```
+
 **Key Points:**
 
-- The `map` function is used to iterate over the array of names. 
+- The `map` function is used to iterate over the array of names.
 
-You could render a `Greeting` component for each name. 
+You could render a `Greeting` component for each name.
 
 ```jsx
 <ul>
@@ -181,16 +189,15 @@ You could render a `Greeting` component for each name.
 ```
 
 > [!Note]
->The curly brackets {} in JSX are used to embed JavaScript expressions inside JSX.JSX allows you to mix HTML-like syntax with JavaScript, but JavaScript expressions must be wrapped in {} inside JSX.
-
+> The curly brackets {} in JSX are used to embed JavaScript expressions inside JSX.JSX allows you to mix HTML-like syntax with JavaScript, but JavaScript expressions must be wrapped in {} inside JSX.
 
 ### 2. **Using a Component.** [TODO]
-  Declare a component function called `PokemonList`, call it in the `App` function 
 
-  ```jsx
-  <PokemonList pokemons={myPokemons} />
-  ```
+Declare a component function called `PokemonList`, call it in the `App` function
 
+```jsx
+<PokemonList pokemons={myPokemons} />
+```
 
 ## Part 5 Separating Components into Files.
 
@@ -198,23 +205,21 @@ You could render a `Greeting` component for each name.
 
 ```jsx
 export default function Welcome(props) {
-	return (
-		<h1>
-			Hello <i>{props.name}</i>
-		</h1>
-	);
+  return (
+    <h1>
+      Hello <i>{props.name}</i>
+    </h1>
+  );
 }
 ```
 
 2. Import it in `App.jsx`:
 
 ```jsx
-   import Welcome from "./components/Greeting";
+import Welcome from "./components/Greeting";
 ```
 
 3. Use the component in the `App()` function as before.
-
-
 
 ## Part 6 Composing Complex Components.
 
@@ -223,19 +228,18 @@ We can compose [multiple components](https://zhenyong.github.io/react/docs/multi
 - Create a new Main component in a separate file.
 
 ```jsx
-  import Welcome from "./Greeting";
-  import Clock from "./Clock";
-  export default function Main() {
-  	const name = "Licardo";
-  	return (
-  		<div>
-  			<Welcome name={name} />
-  			<Clock />
-  		</div>
-  	);
-  }
+import Welcome from "./Greeting";
+import Clock from "./Clock";
+export default function Main() {
+  const name = "Licardo";
+  return (
+    <div>
+      <Welcome name={name} />
+      <Clock />
+    </div>
+  );
+}
 ```
-
 
 ## 📥 Submission
 
@@ -245,6 +249,5 @@ Take screenshots of:
 - The app displaying dynamic greetings for different names.
 - The list of Pokemons rendered from an array using a functional component.
 - Snippet of your coding using complex components.
-
 
 Submit all screenshots on Moodle.
