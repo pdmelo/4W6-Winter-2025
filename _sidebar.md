@@ -46,16 +46,15 @@
 
 **Week 8**
 
-- [Templates](Notes/Week8/templates.md)
-- [React](Notes/Week8/intro-react.md)
+- [React](Notes/Week8/react.md)
 - [3.1 JSX Exercise](Notes/Week8/31-jsx.md)
-- [3.1 Hooks Exercise](Notes/Week8/32-jsx.md)
 
-  **Guides**
+**Guides**
 
 - [Environment Setup](Guides/environment-setup.md)
 - [Debugging](Guides/debugging.md)
 - [Testing](Guides/testing.md)
 - [TypeScript](Guides/typescript.md)
 - [PostresSQL](Guides/database.md)
+- [REST API](Guides/restapi.md)
 - [Troubleshooting](Guides/troubleshooting.md)
