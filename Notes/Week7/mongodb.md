@@ -44,7 +44,9 @@ Popular in modern web apps, IoT, and AI/ML applications
 
 
 ###  📄NoSQL
-- By contrast, a **NoSQL** database is **non-relational**. Data is stored in "unstructured", non-tabular form. For instance, they might be stored in data structures called **documents**. A document can be highly detailed while containing a range of different types of information in different formats. This lets various types of information be organized side-by-side
+- By contrast, a **NoSQL** database is **non-relational**. Data is stored in "unstructured", non-tabular form. For instance, they might be stored in data structures called **documents**. A document can be highly detailed while containing a range of different types of information in different formats. This lets various types of information be organized side-by-side. 
+
+- **Entity Relationships (ERs)** are established through embedded documents and references between collections, rather than traditional relational database tables and foreign keys. You can use tools like [Dataedo](https://dataedo.com/tutorials/how-to-create-er-diagram-for-mongodb) to visualize these relationships
 
   - A NoSQL database is often used when large quantities of complex and diverse data need to be organized, and/or when data changes frequently. They are also useful for developing applications where the data needs change quickly.
   - Unstructured data = not arranged according to a pre-set model or schema.
@@ -122,7 +124,7 @@ More methods can be found [here](https://www.mongodb.com/docs/manual/reference/m
 
 ## MongoDB Setup
 
- Visit [MongoDB's official website](https://www.mongodb.com/) and either set up a local MongoDB server or create a free account on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). In our section, we will setting up the Mongodb on the docker.
+ Visit [MongoDB's official website](https://www.mongodb.com/) and either set up a local MongoDB server or create a free account on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). In our section, we will set up the MongoDB on the docker.
 
 ## 📚 Resources
 
