@@ -216,7 +216,7 @@ const foundPokemon = await getOne(pokemonId);
 
 2. **POST a New Pokemon**
  **model.ts**
-    Update `getOne` function in `model.ts` Look up the insertOne [method](https://www.mongodb.com/docs/manual/reference/method/) to understand the query
+    Update `addOne` function in `model.ts` Look up the insertOne [method](https://www.mongodb.com/docs/manual/reference/method/) to understand the query
 ```typescript
 await pokemonCollection?.insertOne(pokemon);
 ```

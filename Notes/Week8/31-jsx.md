@@ -143,15 +143,14 @@ return (
 ## Part 3 Sending multiple props.
 
 ```jsx
-<Welcome name={name} color={color} />
+<Greeting name={name} color={color} />
 ```
 
-Inside `Welcome.jsx`, access the props as follows:
+In the `Greeting` function component  access the props as follows:
 
 ```jsx
-export default function Welcome(props) {
-  return (
-    <h1 style={{ color: props.color }}>
+function Greeting(props) {
+  return (<h1 style={{ color: props.color }}>
       Hello <i>{props.name}</i>{" "}
     </h1>
   );
@@ -204,7 +203,7 @@ Declare a component function called `PokemonList`, call it in the `App` function
 1. Create a `components` folder in the `src` folder . Add a new file `Greeting.jsx`
 
 ```jsx
-export default function Welcome(props) {
+export default function Greeting(props) {
   return (
     <h1>
       Hello <i>{props.name}</i>
@@ -216,7 +215,7 @@ export default function Welcome(props) {
 2. Import it in `App.jsx`:
 
 ```jsx
-import Welcome from "./components/Greeting";
+import Greeting from "./components/Greeting";
 ```
 
 3. Use the component in the `App()` function as before.
@@ -225,10 +224,10 @@ import Welcome from "./components/Greeting";
 
 We can compose [multiple components](https://zhenyong.github.io/react/docs/multiple-components.html) into a single component.
 
-- Create a new Main component in a separate file.
+- Create a new `Main` component in a separate file.
 
 ```jsx
-import Welcome from "./Greeting";
+import Greeting from "./Greeting";
 import Clock from "./Clock";
 export default function Main() {
   const name = "Licardo";
