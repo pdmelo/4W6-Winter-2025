@@ -146,11 +146,12 @@ return (
 <Greeting name={name} color={color} />
 ```
 
-In the `Greeting` function component  access the props as follows:
+In the `Greeting` function component access the props as follows:
 
 ```jsx
 function Greeting(props) {
-  return (<h1 style={{ color: props.color }}>
+  return (
+    <h1 style={{ color: props.color }}>
       Hello <i>{props.name}</i>{" "}
     </h1>
   );
