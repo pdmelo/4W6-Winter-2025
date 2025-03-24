@@ -49,8 +49,13 @@
 - [React](Notes/Week8/react.md)
 - [3.1 JSX Exercise](Notes/Week8/31-jsx.md)
 
+**Week 9**
+
+- [3.2 useState Exercise](Notes/Week9/32-usestate.md)
+
 **Guides**
 
+- [cURL](Guides/curl.md)
 - [Environment Setup](Guides/environment-setup.md)
 - [Debugging](Guides/debugging.md)
 - [Testing](Guides/testing.md)
