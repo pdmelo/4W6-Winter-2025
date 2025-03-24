@@ -107,7 +107,7 @@ function Greeting({ name }) {
 - **[Virtual DOM](#the-virtual-dom):** Efficient rendering
 - **[Components](#components):** Reusable UI building blocks.
 - **[JSX](#jsx):** Combines JavaScript and HTML-like syntax.
-- **State & Props:** Manage dynamic data..
+- **[State & Props](#props-and-state):** Manage dynamic data..
 - **Hooks:** Modern way to handle state and side effects.
 
 ### The Virtual DOM
@@ -236,6 +236,54 @@ JSX is transformed into `React.createElement` behind the scenes by Babel.
 ```
 
 
+
+------
+
+### Props And State
+
+#### 🎒 Props (Properties)
+
+- Used to **pass data** to components.
+- **Read-only** (immutable).
+- Allow data to be passed from parent to child components.
+
+Example:
+
+```tsx
+const Greeting = (props) => {
+  return <h1>Hello, {props.name}!</h1>;
+};
+```
+
+Usage:
+
+```tsx
+<Greeting name="Alice" />
+```
+
+
+------
+
+#### 🔥 State (Component Memory)
+
+- Stores **dynamic data** in components.ie Data is mutable
+- Uses the `useState` hook (functional components).
+
+Example:
+
+```tsx
+import { useState } from 'react';
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
+};
+```
 
 ------
 

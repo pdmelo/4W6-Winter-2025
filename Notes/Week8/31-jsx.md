@@ -225,21 +225,67 @@ import Greeting from "./components/Greeting";
 
 We can compose [multiple components](https://zhenyong.github.io/react/docs/multiple-components.html) into a single component.
 
-- Create a new `Main` component in a separate file.
+- Create a new `HeaderBody` component in a separate file.
+
+  ```jsx
+  export default function HeaderBody() {
+  	return (
+  		<>
+  			<p>
+  				My friend has <b>powers</b>
+  			</p>
+  			<br />
+  		</>
+  	);
+  }
+  ```
+
+  
+
+- Create a new `MainHeader` component in a separate file.
 
 ```jsx
 import Greeting from "./Greeting";
-import Clock from "./Clock";
-export default function Main() {
-  const name = "Licardo";
-  return (
-    <div>
-      <Welcome name={name} />
-      <Clock />
-    </div>
-  );
+import HeaderBody from "./HeaderBody";
+
+function MainHeader() {
+	const name = "Pikachu";
+	const color = "SteelBlue";
+	return (
+		<>
+			<Greeting name={name} color={color} />
+			<HeaderBody />
+		</>
+	);
 }
+
+export default MainHeader;
+
 ```
+
+Call the `MainHeader` component in the `App.jsx`. The return should look like this. Make sure to import the appropriate components.
+
+```jsx
+return (
+		<div className="container">
+			<article>
+				<hgroup>
+					<div>
+						<MainHeader />
+					</div>
+				</hgroup>
+
+				<PokemonList pokemons={myPokemons} />
+
+				<button onClick={() => alert("Hi there")}>Click Me</button>
+			</article>
+		</div>
+	);
+```
+
+
+
+
 
 ## 📥 Submission
 

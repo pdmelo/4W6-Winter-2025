@@ -1,45 +1,8 @@
-# 🛤️3.1 JSX Exercise
+# 🛤️3.2 useState Notes
 
 ## React Components with Hooks
 
-## 🎯 Objectives
 
-1. **Understand** what Hooks are and why they are used in React.
-
-2. **Use** the `useState` Hook to manage state in a functional component.
-
-3. **Modify** state dynamically using event handlers.
-
-
----
-
-## 🔨 Setup
-
-1. Open a terminal and navigate to your project folder: `~/web-ii/exercises/`.
-2. Run `npx create-react-app 2.2-jsx-routing --template typescript` to generate a new React project with TypeScript.
-3. Navigate into the project folder: `cd 2.2-jsx-routing`.
-4. Install React Router: `npm install react-router-dom`.
-5. Start the project: `npm start`.
-
----
-
-## Components in Separate file.
-1. Create a folder called components. Add a new file `Greeting.jsx`
-``` jsx
-  export default (props) => {
-  return <h1>Hello <i>{props.name}</i></h1>
-}
-```
-
-2. In `App.jsx` import the files
-
-   ```jsx
-   import Welcome from './components/Greeting';
-   ```
-
-   
-
-3. Use the component same as before in the `App()` funciton
 
 ## 📌 Part 1: Understanding Hooks in React
 
@@ -214,7 +177,7 @@ export default App;
 - `useState` initializes `myPokemons` as an array.
 - Clicking the button adds "Pikachu" to the list.
 
-### 2. **With a Component** [TODO]
+### 2. **With a Input Field[TODO]
 
 Create a new component called `PokemonList.jsx` in a separate file. Now modify `App.jsx` to use this component
 
@@ -223,17 +186,25 @@ import { useState } from "react";
 import PokemonList from "./PokemonList";
 
 function App() {
+    const [newPoke, setPoke] = useState("");
 	const [myPokemons, setMyPokemons] = useState(["Charmander", "Bulbasaur", "Squirtle"]);
 
-	const addPokemon = () => {
-		setMyPokemons([...myPokemons, "Pikachu"]);
+	const addPokemon = (newPoke) => {
+		setMyPokemons([...myPokemons, newPoke]);
+		setPoke(""); //Clear input after adding.
 	};
 
 	return (
 		<div className="container">
-			<h1>My Pokémons</h1>
+			<h1>My Pokemons</h1>
 			<PokemonList pokemons={myPokemons} />
-			<button onClick={addPokemon}>Add Pikachu</button>
+			<br />
+				<input
+					type="text"
+					value={newPoke}
+					onChange={(e) => setPoke(e.target.value)}
+				/>
+				<button onClick={() => addPokemon(newPoke)}>Add Pokemon</button>
 		</div>
 	);
 }
@@ -242,11 +213,7 @@ export default App;
 
 ```
 
-## 📌 Part 5: Event Listeners in React
-
-### **Understanding Event Listeners**
-
-Event listeners allow React components to **respond to user actions**, such as clicks, mouse movements, or key presses.
+## 📌 Part 6: Background colour [TODO]
 
 ### **Example: Handling Click Events**
 
@@ -289,11 +256,3 @@ export default App;
 
 ---
 
-## 📥 Submission
-
-Take screenshots of:
- The app displaying a counter with `useState`.
- The app updating state dynamically (e.g., changing the Pokémon name).
- The app rendering a list of Pokémons, both with and without a component.
-
-Submit all screenshots on Moodle.
