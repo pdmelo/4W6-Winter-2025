@@ -18,8 +18,8 @@
 7. Start the react server: `npm run dev`.
 
 
-## Context: Understanding Hooks in React
-Hooks allow you to use the  **state** and other React **features** inside **functional components**, without needing a class component. The most commonly used Hook is `useState`, which lets functional components to store and update state.
+## 🔍 Context: Understanding Hooks in React
+[Hooks](https://pdmelo.github.io/4W6-Winter-2025/#/Notes/Week8/react?id=hooks) allow you to use the  **state** and other React **features** inside **functional components**, without needing a class component. The most commonly used Hook is `useState`, which lets functional components to store and update state.
 
 In React, **state** refers to a component’s dynamic data—values that can change over time and trigger re-renders when updated.
 
@@ -136,43 +136,7 @@ Add a toggle function to change the colour of the text to red if blue, and vice 
 	</button>
 
 
-
-## Part 2: Event Listeners in React
-
-Event listeners allow React components to **respond to user actions**, such as clicks, mouse movements, or key presses. Events in React are similar to JavaScript, but use **camelCase** for event names.
-
-**Updating State Dynamically with user input**
-
-Modify `App.jsx` to include a text input field that updates a Pokemon’s name.
-
-```jsx
-import { useState } from "react";
-
-function App() {
-  const [name, setName] = useState("Charmander");
-
-  return (
-    <div className="container">
-      <h1>Meet my Pokemon: {name}</h1>
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-    </div>
-  );
-}
-
-export default App;
-```
-
-**Key Points:**
-
-- `useState("Charmander")` initializes the Pokemon name.
-
-- The input field updates `name` whenever a user types.
-
-## Part 3: Passing State as Props
+## Part 2: Passing State as Props
 We can pass state as **props** to another component.
 
 **Step 1: Create a `Counter` Component**
@@ -216,6 +180,60 @@ export default App;
 - The curly brackets {} in JSX (count={count}) tell React that count is a JavaScript expression and should be evaluated.
 
 
+## Part 3: Event Listeners in React
+
+Event listeners allow React components to **respond to user actions**, such as clicks, mouse movements, or key presses. Events in React are similar to JavaScript, but use **camelCase** for event names.
+
+**Updating State Dynamically with user input**
+
+Modify `App.jsx` to include a text input field that updates a Pokemon’s name.
+
+```jsx
+import { useState } from "react";
+
+function App() {
+  const [name, setName] = useState("Charmander");
+
+  return (
+    <div className="container">
+      <h1>Meet my Pokemon: {name}</h1>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+    </div>
+  );
+}
+
+export default App;
+```
+
+**Key Points:**
+
+- `useState("Charmander")` initializes the Pokemon name.
+
+- The input field updates `name` whenever a user types.
+
+> [!NOte]
+>
+> (e) => setName(e.target.value)  This is a callback function and it could be extracted into its own function within the same component .For example:
+>
+> ```jsx
+> const eventhandler = (e) => {
+> 
+> setName(e.target.value)
+> 
+> };
+> ```
+>
+> 
+>
+> ```jsx
+> <input type="text" value={name} onChange={evenHandler} />
+> ```
+
+
 
 
 ##  Part 4 Working with Lists and Hooks
@@ -234,19 +252,16 @@ function App() {
     "Squirtle",
   ]);
 
+  //event handler to add new value to existing array of pokemons  
   const addPokemon = () => {
     setMyPokemons([...myPokemons, "Pikachu"]);
   };
 
   return (
     <div className="container">
-      <h1>My Pokémons</h1>
-      <ul>
-        {myPokemons.map((pokemon, index) => (
-          <li key={index}>{pokemon}</li>
-        ))}
-      </ul>
-      <button onClick={addPokemon}>Add Pikachu</button>
+      <h1>My Pokemons</h1>
+      <PokemonList pokemons={myPokemons} />
+      <button onClick={() => addPokemon()}>Add Pikachu</button>
     </div>
   );
 }
@@ -260,7 +275,7 @@ export default App;
 ##  Part 5 [TODO]
 Make the Pokemon list more dynamic **With a Input Field** 
 
-Modify `App.jsx` to use the **Part 2** to accept a pokemon from the user and add it to the list.
+Modify `App.jsx` to use the **Part 3** to accept a pokemon from the user and add it to the list.
 
 ## Part 6 [TODO]
 Modify App.jsx to include an event listener that changes the background color when a button is clicked.

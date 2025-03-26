@@ -108,7 +108,7 @@ function Greeting({ name }) {
 - **[Components](#components):** Reusable UI building blocks.
 - **[JSX](#jsx):** Combines JavaScript and HTML-like syntax.
 - **[State & Props](#props-and-state):** Manage dynamic data..
-- **Hooks:** Modern way to handle state and side effects.
+- **[Hooks](#hooks):** Modern way to handle state and side effects.
 
 ### The Virtual DOM
 
@@ -266,8 +266,13 @@ Usage:
 
 #### 🔥 State (Component Memory)
 
+- State is like a variable, but React **remembers** its value across re-renders.
+
 - Stores **dynamic data** in components.ie Data is mutable
+
 - Uses the `useState` hook (functional components).
+
+  
 
 Example:
 
@@ -284,8 +289,62 @@ const Counter = () => {
   );
 };
 ```
+----
+### Hooks
 
-------
+A **Hook** is a special function in React that lets you "hook into" React features like state and lifecycle methods inside functional components. Hooks were introduced in React 16.8 to allow functional components to manage state and side effects, replacing the need for class components in many cases.
+
+Before Hooks, state and lifecycle methods were only available in class components. Functional components were stateless and could only receive props. Hooks allow functional components to:
+
+- Manage state (useState)
+- Perform side effects (useEffect)
+- Access context (useContext)
+- Manage refs (useRef)
+- And much more!
+
+### **Rules of Hooks**
+
+When using Hooks, follow these two rules:<br>
+ 1️⃣ **Only call Hooks at the top level** (not inside loops, conditions, or nested functions).<br>
+ 2️⃣ **Only call Hooks inside React function components** or **custom Hooks**.
+
+
+
+### **Types of Hooks in React**
+
+📌 **State Management Hooks**
+
+- `useState` – Manage component state
+- `useReducer` – Alternative to `useState` for complex logic
+
+📌 **Side Effects & Lifecycle Hooks**
+
+- `useEffect` – Perform side effects (fetching data, DOM manipulation, etc.)
+
+📌 **Context & Performance Hooks**
+
+- `useContext` – Access global state (like themes, authentication)
+- `useMemo` – Optimize performance by memorizing values
+- `useCallback` – Memorize functions to prevent unnecessary re-renders
+
+📌 **Refs & DOM Interaction Hooks**
+
+- `useRef` – Access/manipulate DOM elements
+- `useImperativeHandle` – Expose specific methods from child components
+
+📌 **Custom Hooks**
+ You can create **your own Hooks** by combining existing ones to reuse logic across components.
+
+
+
+### **When to Use Hooks?**
+
+- When you need **state** in a functional component.
+- When you want to perform **side effects** like API calls, timers, or event listeners.
+- When you need to share **logic** between components using **custom hooks**.
+
+-----
+
 
 ### Developer Tools
 
