@@ -52,6 +52,7 @@
 **Week 9**
 
 - [3.2 useState Exercise](Notes/Week9/32-usestate.md)
+- [3.3 useEffect Exercise](Notes/Week9/33-useeffect.md)
 
 **Guides**
 
