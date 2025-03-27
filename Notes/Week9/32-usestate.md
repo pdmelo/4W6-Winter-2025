@@ -31,6 +31,39 @@ State can store various types of data, such as:
 - Objects (e.g., user profile details)
 - Arrays (e.g., a list of tasks in a to-do app)
 
+### Types of Hooks in React
+ **State Management Hooks**
+
+- useState – Manage component state
+
+- useReducer – Alternative to useState for complex logic
+
+
+**Side Effects & Lifecycle Hooks**
+
+- useEffect – Perform side effects (fetching data, DOM manipulation, etc.)
+
+
+**Context & Performance Hooks**
+
+- useContext – Access global state (like themes, authentication)
+
+- useMemo – Optimize performance by memoizing values
+
+- useCallback – Memoize functions to prevent unnecessary re-renders
+
+
+**Refs & DOM Interaction Hooks**
+
+- useRef – Access/manipulate DOM elements
+
+- useImperativeHandle – Expose specific methods from child components
+
+
+**Custom Hooks**
+
+- You can create your own Hooks by combining existing ones to reuse logic across components.
+
 
 ## Part 1 : Using `useState` and Dynamic Updates
 **Example 1. Using `useState` for a Counter**
