@@ -256,3 +256,27 @@ export default App;
 
 ---
 
+**Conditional rendering.**
+
+```
+- Conditional rendering (`{pokemon ? (...) : <p>Loading...</p>}`) ensures we show a loading message before data is available.
+```
+
+**Example on show buton** 
+
+```
+const [showUpdate, setShowUpdate] = useState(false);
+
+const onSave = () => {
+    setShowUpdate(true); // Trigger component visibility
+};
+
+return (
+    <div>
+        <button onClick={onSave}>Edit</button>
+        {showUpdate && <UpdateTodo todo={todo} />}
+    </div>
+);
+
+```
+

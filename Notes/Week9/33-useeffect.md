@@ -244,6 +244,98 @@ export default FetchData;
 
 
 
+## Part 5: cleanup on unmount `useEffect` 
+
+1. Create a new component Clock.jsx. 
+
+```jsx
+import { useState, useEffect } from "react";
+
+function Clock() {
+	const [time, setTime] = useState(new Date().toLocaleTimeString());
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setTime(new Date().toLocaleTimeString());
+		}, 1000);
+
+		return () => clearInterval(interval); // Cleanup to avoid memory leaks
+	}, []);
+
+	return (
+		<div>
+			<p>Current Time: {time}</p>
+		</div>
+	);
+}
+
+export default Clock;
+```
+
+**Key Points:**
+
+1. **Side Effect (`useEffect`)**:
+
+   - When the component mounts, `useEffect` sets up a repeating action using `setInterval`.
+   - `setInterval` runs a function every **1 second**, updating `time` with the new current time.
+   - The `useEffect` dependency array (`[]`) ensures this effect runs **only once** when the component mounts.
+
+2. **Cleanup** `clearInterval`
+
+   - This is the **cleanup function**, which React calls when the component **unmounts**.
+   - `clearInterval(interval)` stops the interval from running to prevent memory leaks or errors.
+   - Without this cleanup, if the component is removed from the UI, the interval would keep running, leading to unwanted side effects
+
+>[!Note]
+> `clearInterval` is part of the `setInterval/clearInterval` pair in JavaScript.
+> `setInterval` is used to repeatedly execute a function after a specified delay (in milliseconds).
+> `clearInterval` is used to stop an interval that was started with `setInterval`.
+
+Modify the `App.jsx` to include the clock component, But first declare a Boolean state, `showClock`. The Clock will be displayed on onclick of a button.
+
+```
+const [showClock, setShowClock] = useState(true);
+```
+
+We will use conditional rendering here
+
+````jsx
+ <div>
+     <button onClick={() => setShowClock(!showClock)}>Toggle Clock</button>
+     {showClock && <Clock />}
+ </div>
+````
+
+>[!Note]
+> **Conditional Rendering in React :**
+>In React, conditional rendering allows us to dynamically render components or elements based on a condition. In the given App function, the component Clock is displayed based on the state variable `showClock`.
+>
+>- If `showClock` is true, <Clock /> is rendered.
+>- If `showClock` is false, React doesn't render anything.
+
+Once you have the clock functioning on the app. Remove the cleanup in the `useEffect`
+
+```jsx
+return () => clearInterval(interval); // remove this line.
+```
+
+**What Happens When We Click the Button?**
+
+- Initially, the `Clock` is mounted and starts the `setInterval`, updating the time every second.
+
+- When you click the `Toggle Clock` button:
+
+  - The `Clock` component unmounts (disappears from the UI).
+
+  - But the interval is still running in the background because we didn't use `clearInterval`!
+
+- If you click the button again and re-mount the component:
+  - A new interval is created.
+
+Now two intervals are running at the same time, updating state twice per second.
+
+If you toggle the component multiple times, intervals keep stacking up, making the clock update multiple times per second.
+
 ##  Summary
 
 | `useEffect(() => {})`                      | Runs on every render        |
