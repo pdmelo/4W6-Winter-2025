@@ -5,9 +5,7 @@
 1. **Understand** what React Router is and why it's used in React applications..
 2. **Use** React Router to navigate between pages without full page reloads.
 3. **Use** dynamic routes and URL parameters to display different content based on the URL.
-3. **Navigate** programmatically using React Router hooks.
-
-
+4. **Navigate** programmatically using React Router hooks.
 
 ## Why Use React Router?
 
@@ -20,8 +18,6 @@ React Router allows us to build single-page applications (SPAs) that can:
 - Implement nested routes for better structure.
 
 - Redirect users programmatically..
-
-  
 
 ## 🔨 Setup
 
@@ -37,50 +33,47 @@ React Router allows us to build single-page applications (SPAs) that can:
 8. In the terminal of VS Code, hit the `+` icon to open a new terminal instance.
 9. cd to `client` to run `npm run dev` to start the react server.
 
-
-
 ## 🔍 Context
 
 React Router is a standard **routing library ** for React applications. It allows navigation between different views or components in a single-page application (SPA) without requiring a full page reload.
 
-## Part 1:  Setting Up The App
+## Part 1: Setting Up The App
+
 1. In the components folder, create two components `Home.jsx` and `About.jsx` with a some data.
 
 2. Add this style in the index.css. (Use the colors that please your eyes...and mine !)
 
    ```css
    .nav {
-   	background-color: rgb(163, 169, 228);
-   	color: whitesmoke;
-   	display: flex;
-   	justify-content: space-between;
-   	padding: 0 1rem;
+     background-color: rgb(163, 169, 228);
+     color: whitesmoke;
+     display: flex;
+     justify-content: space-between;
+     padding: 0 1rem;
    }
    .nav a {
-   	color: whitesmoke;
+     color: whitesmoke;
    }
    ```
 
-
-
-## Part 2:  Setting Up the page routing the old way(JS).
+## Part 2: Setting Up the page routing the old way(JS).
 
 1. Create a new component `NavBarOld.jsx` and the following code.
 
 ```jsx
 function NavBarOld() {
-	return (
-		<nav className="nav">
-			<ul>
-				<li>
-					<a href="/">Home</a>
-				</li>
-				<li>
-					<a href="/about">About</a>
-				</li>
-			</ul>
-		</nav>
-	);
+  return (
+    <nav className="nav">
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+  );
 }
 export default NavBarOld;
 ```
@@ -89,42 +82,40 @@ export default NavBarOld;
 
 ```jsx
 function App() {
-	let component;
-	//log this to understand the what it returns
-    console.log(window.location);
+  let component;
+  //log this to understand the what it returns
+  console.log(window.location);
 
-	switch (window.location.pathname) {
-			case "/":
-				component = <Home />;
-				break;
-			case "/about":
-				component = <About />;
-				break;
-		}
-	return (
-		<>
-			<article>
-			<NavBarOld />
-				{component}
-			</article>
-		</>
-	);
+  switch (window.location.pathname) {
+    case "/":
+      component = <Home />;
+      break;
+    case "/about":
+      component = <About />;
+      break;
+  }
+  return (
+    <>
+      <article>
+        <NavBarOld />
+        {component}
+      </article>
+    </>
+  );
 }
 export default App;
 ```
 
-
-
-## Part 2:  Setting Up Page Routing using React Router
+## Part 2: Setting Up Page Routing using React Router
 
 `BrowserRouter` is a component from `react-router-dom` that enables **client-side routing** in a React. It manages navigation without causing a full-page reload.
 
 1. Modify `App.jsx` to wrap the app with **BrowserRouter** and define basic routes.Pay attention to the imports..
 
 ```jsx
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Home';
-import About from './About';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
 
 function App() {
   return (
@@ -140,13 +131,11 @@ function App() {
 export default App;
 ```
 
-
-
 ### Additional Notes
 
-####  Navigating Between Pages
+#### Navigating Between Pages
 
-2. Create a new component `Navbar` , Use the `Link` component instead of ` < a > ` tags. Pay attention to the imports,It requires the `Link` react library  from `react-router-dom`..
+2. Create a new component `Navbar` , Use the `Link` component instead of `< a >` tags. Pay attention to the imports,It requires the `Link` react library from `react-router-dom`..
    - Unlike a traditional `<a href="...">`, `Link` **does not refresh the page**. Instead, it updates the URL and renders the corresponding route using React Router.
 
 ```
@@ -166,22 +155,20 @@ function Navbar() {
 
    ```jsx
    <Router>
-   	<Navbar />
-   		<Routes>
-   				<Route path="/" element={<Home />} />
-   				<Route path="/about" element={<About />} />
-   		</Routes>
+     <Navbar />
+     <Routes>
+       <Route path="/" element={<Home />} />
+       <Route path="/about" element={<About />} />
+     </Routes>
    </Router>
    ```
 
-   
-
-####  Using URL Parameters
+#### Using URL Parameters
 
 Define dynamic routes using `:` before a parameter name:
 
 ```jsx
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 function Pokemon() {
   let { username } = useParams();
@@ -201,8 +188,6 @@ In the `Navbar`
 <Link to="/profile/Pikachu">Pikachu's Profile</Link>
 ```
 
-
-
 #### Redirects and Navigation
 
 Use `useNavigate` to programmatically navigate.
@@ -210,13 +195,11 @@ Use `useNavigate` to programmatically navigate.
 - `useNavigate` is a hook from **React Router v6** that allows you to programmatically navigate between pages
 
 ```jsx
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const navigate = useNavigate();
-  return (
-    <button onClick={() => navigate('/about')}>Go to About</button>
-  );
+  return <button onClick={() => navigate("/about")}>Go to About</button>;
 }
 ```
 
