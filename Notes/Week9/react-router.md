@@ -146,7 +146,7 @@ export default App;
 
 ####  Navigating Between Pages
 
-2. Create a new component ``Navbar` , Use the `Link` component instead of `<a>` tags:.Pay attention to the imports..
+2. Create a new component `Navbar` , Use the `Link` component instead of ` < a > ` tags. Pay attention to the imports,It requires the `Link` react library  from `react-router-dom`..
    - Unlike a traditional `<a href="...">`, `Link` **does not refresh the page**. Instead, it updates the URL and renders the corresponding route using React Router.
 
 ```

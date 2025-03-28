@@ -247,7 +247,7 @@ JSX is transformed into `React.createElement` behind the scenes by Babel.
 - **Read-only** (immutable).
 - Allow data to be passed from parent to child components.
 
-Example:
+**Example (Without Destructuring):**
 
 ```tsx
 const Greeting = (props) => {
@@ -255,12 +255,61 @@ const Greeting = (props) => {
 };
 ```
 
-Usage:
+**Example (With Destructuring):**
+
+```jsx
+const Greeting = ({ name }) => {
+  return <h1>Hello, {name}!</h1>;
+};
+```
+
+**Usage:**
 
 ```tsx
 <Greeting name="Alice" />
 ```
 
+
+
+**Modifying Props**
+
+- **❌ Trying to Modify Props (Incorrect)**
+
+```jsx
+const Greeting = ({ name }) => {
+  name = "Bob"; // ❌ This will NOT work! Props are read-only.
+  return <h1>Hello, {name}!</h1>;
+};
+
+<Greeting name="Alice" />; // Expected "Hello, Alice!" but trying to modify it causes an error.
+```
+
+👉 **This will cause an error or unexpected behaviour because props cannot be changed.**
+
+
+
+- **Using State for Mutable Data**
+  - If you need to change the data, use **state** instead of modifying props:
+
+```jsx
+    import { useState } from "react";
+    
+    const Greeting = ({ initialName }) => {
+      const [name, setName] = useState(initialName); // ✅ Using state for mutable data
+    
+      return (
+        <div>
+          <h1>Hello, {name}!</h1>
+          <button onClick={() => setName("Bob")}>Change Name</button>
+        </div>
+      );
+    };
+    
+    <Greeting initialName="Alice" />;
+    
+```
+👉 Here, initialName is a prop (immutable), but we store it in useState to make it mutable.
+Now clicking the button updates the name without modifying the original prop.
 
 ------
 
@@ -272,9 +321,7 @@ Usage:
 
 - Uses the `useState` hook (functional components).
 
-  
-
-Example:
+**Example:**
 
 ```tsx
 import { useState } from 'react';
