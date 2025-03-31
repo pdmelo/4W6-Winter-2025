@@ -65,7 +65,7 @@ Example: (You may need to create components and adjust your route as per your de
 
 **Goal**: Fetch a specific Todo from the database and display its details on a webpage.
 
-![Single-Todo](/Assignments/images/single-todo.png)
+![Single-Todo](../Assignments/images/single-todo.png)
 
 > [!Note]
 > CSS
@@ -183,12 +183,12 @@ Example:
        method: "GET",
        mode: "cors",
      };
-  
+    
      const response = await fetch(
        `http://localhost:3000/todos/todos`,
        requestOptions
      );
-  
+    
      if (response.ok) {
        const data = await response.json();
        setTodoItem(data.payload.todo);
