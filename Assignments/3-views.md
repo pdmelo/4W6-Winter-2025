@@ -183,12 +183,12 @@ Example:
        method: "GET",
        mode: "cors",
      };
-      
+
      const response = await fetch(
        `http://localhost:3000/todos/todos`,
        requestOptions
      );
-      
+
      if (response.ok) {
        const data = await response.json();
        setTodoItem(data.payload.todo);
@@ -229,7 +229,7 @@ Example:
 
 - Display a pop up confirming the creation.
 
-- After a successful creation, you need to redirect the user to the newly created Todo’s ShowView, ex. /todos/newId. ( Look at the notes here for [redirects](https://pdmelo.github.io/4W6-Winter-2025/#/Notes/Week9/react-router)
+- After a successful creation, you need to redirect the user to the newly created Todo’s ShowView, ex. /todos/newId. Look at the notes here for [redirects](https://pdmelo.github.io/4W6-Winter-2025/#/Notes/Week9/react-router)
 
 - If the form data is invalid (missing title or description), then render the **CreateTodo** again with an alert message pop up to let the user know what went wrong.
 - Comments are provided in the code to help you guide through.
@@ -252,9 +252,9 @@ Example:
     				description: //the description from the user,
     			}),
     		};
-    
+
     const response = await fetch(`http://localhost:3000/todos/todos`,requestOptions);
-    
+
     if (response.ok) {
      alert(`Todo title ${inputField.todo_title} Created!`);
     }
