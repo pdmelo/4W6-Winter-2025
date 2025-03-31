@@ -65,7 +65,7 @@ Example: (You may need to create components and adjust your route as per your de
 
 **Goal**: Fetch a specific Todo from the database and display its details on a webpage.
 
-![Single-Todo](../Assignments/images/single-todo.png)
+![Single-Todo](/Assignments/images/single-todo.png)
 
 > [!Note]
 > CSS
@@ -153,7 +153,7 @@ Visit the client URL http://localhost:5173/ to display details of the single tod
 
 Example:
 
-<img src="../Assignments/images/show-todo.png" alt="show-todo" style="zoom:50%;" />
+<img src="/Assignments/images/show-todo.png" alt="show-todo" style="zoom:50%;" />
 
 ### Part 3: Displaying a List of Todos (15%)
 
@@ -202,7 +202,7 @@ Example:
      - Clicking on the List all Todos, should display all the todos.
 
 Example:
-<img src="https://pdmelo.github.io/4W6-Winter-2025/#/Assignments/images/show-todos.png" alt="Show-Todos" style="zoom:50%;" />
+<img src="/Assignments/images/show-todos.png" alt="Show-Todos" style="zoom:50%;" />
 
 **Extra Feature: (Bonus points)**
 
@@ -229,7 +229,7 @@ Example:
 
 - Display a pop up confirming the creation.
 
-- After a successful creation, you need to redirect the user to the newly created Todo’s ShowView, ex. /todos/newId. ( Look at the notes here for [redirects](https://pdmelo.github.io/4W6-Winter-2025/#/Notes/Week9/react-router)
+- After a successful creation, you need to redirect the user to the newly created Todo’s ShowView, ex. /todos/newId. Look at the notes here for [redirects](https://pdmelo.github.io/4W6-Winter-2025/#/Notes/Week9/react-router)
 
 - If the form data is invalid (missing title or description), then render the **CreateTodo** again with an alert message pop up to let the user know what went wrong.
 - Comments are provided in the code to help you guide through.
