@@ -65,7 +65,7 @@ Example: (You may need to create components and adjust your route as per your de
 
 **Goal**: Fetch a specific Todo from the database and display its details on a webpage.
 
-![Single-Todo](../Assignments/images/single-todo.png)
+![Single-Todo](/Assignments/images/single-todo.png)
 
 > [!Note]
 > CSS
@@ -153,7 +153,7 @@ Visit the client URL http://localhost:5173/ to display details of the single tod
 
 Example:
 
-<img src="../Assignments/images/show-todo.png" alt="show-todo" style="zoom:50%;" />
+<img src="/Assignments/images/show-todo.png" alt="show-todo" style="zoom:50%;" />
 
 ### Part 3: Displaying a List of Todos (15%)
 
@@ -202,7 +202,7 @@ Example:
      - Clicking on the List all Todos, should display all the todos.
 
 Example:
-<img src="https://pdmelo.github.io/4W6-Winter-2025/#/Assignments/images/show-todos.png" alt="Show-Todos" style="zoom:50%;" />
+<img src="/Assignments/images/show-todos.png" alt="Show-Todos" style="zoom:50%;" />
 
 **Extra Feature: (Bonus points)**
 
@@ -213,7 +213,7 @@ Example:
 **Goal:** Allow users to create new Todos by filling out a form and submitting their input to the server.
 
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
-	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/#/Assignments/images/Create-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="/Assignments/images/Create-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
 	</iframe>
 </div>
 
@@ -314,7 +314,7 @@ There are multiple ways to achieve this. I suggest use the `ShowView.jsx` compon
 Example:
 
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
-	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/#/Assignments/images/mark-complete.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="/Assignments/images/mark-complete.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
 	</iframe>
 </div>
 
@@ -339,7 +339,7 @@ Example:
 Example:
 
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
-	<iframe allow="fullscreen;" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/#/Assignments/images/delete-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	<iframe allow="fullscreen;" allowfullscreen height="100%" src="/Assignments/images/delete-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
 	</iframe>
 </div>
 
