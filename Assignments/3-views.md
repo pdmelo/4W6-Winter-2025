@@ -161,7 +161,7 @@ Example:
 
 <img src="../Assignments/images/show-todo.png" alt="show-todo" style="zoom:50%;" />
 
-### Part 2: Displaying a List of Todos (15%)
+### Part 3: Displaying a List of Todos (15%)
 **Goal:** Fetch all of your Todos from the database and display them in a neatly formatted list on a webpage.
            ![all-tods](../Assignments/images/all-todos.png)
 
@@ -203,18 +203,18 @@ Example:
      - Clicking on the List all Todos, should display all the todos.
 
 Example:
-<img src="../Assignments/images/show-todos.png" alt="Show-Todos" style="zoom:50%;" />
+<img src="https://pdmelo.github.io/4W6-Winter-2025/#/Assignments/images/show-todos.png" alt="Show-Todos" style="zoom:50%;" />
 
 **Extra Feature: (Bonus points)**
 
 - Each listed todo, should be clickable to display the details of the  todo.
 
-### Part 3: Creating a New Todo (25%)
+### Part 4: Creating a New Todo (25%)
 **Goal:** Allow users to create new Todos by filling out a form and submitting their input to the server.
 
 
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
-	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="/Assignments/images/Create-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/#/Assignments/images/Create-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
 	</iframe>
 </div>
 
@@ -279,7 +279,7 @@ Example:
 
 -----
 
-### Part 4: Editing Todos (25%)
+### Part 5: Editing Todos (25%)
 
 **Goal**: Provide a way for users to modify existing Todos.
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
@@ -313,13 +313,13 @@ There are multiple ways to achieve this. I suggest use the `ShowView.jsx` compon
 
 
 
-### Part 5: Mark Complete (5%)
+### Part 6: Mark Complete (5%)
 
 **Goal**: Allow users to mark a Todo as complete.
 
 Example:
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
-	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="/Assignments/images/mark-complete.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/#/Assignments/images/mark-complete.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
 	</iframe>
 </div>
 
@@ -341,12 +341,12 @@ Example:
    - - Visit the client URL http://localhost:5173/  Display a single Todo or display All to view the update.
 
 
-### Part 6: Deleting Todos (5%)
+### Part 7: Deleting Todos (5%)
 **Goal:** Allow users to delete a Todo.
 
 Example:
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
-	<iframe allow="fullscreen;" allowfullscreen height="100%" src="/Assignments/images/delete-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	<iframe allow="fullscreen;" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/#/Assignments/images/delete-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
 	</iframe>
 </div>
 
@@ -357,7 +357,7 @@ Example:
 - once Deleted redirect the use to the List of All Todos
 
 
-### Part 7: Extra Feature (15%)
+### Part 8: Extra Feature (15%)
 Choose ONE of the following to implement. You can choose to implement more than one if you’d like, but you will only receive marks for your best one.
 
 #### Option 1: SubTodos
