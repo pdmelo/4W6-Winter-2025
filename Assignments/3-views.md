@@ -183,12 +183,12 @@ Example:
        method: "GET",
        mode: "cors",
      };
-
+  
      const response = await fetch(
        `http://localhost:3000/todos/todos`,
        requestOptions
      );
-
+  
      if (response.ok) {
        const data = await response.json();
        setTodoItem(data.payload.todo);
@@ -213,7 +213,7 @@ Example:
 **Goal:** Allow users to create new Todos by filling out a form and submitting their input to the server.
 
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
-	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/#/Assignments/images/Create-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="/Assignments/images/create-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
 	</iframe>
 </div>
 
@@ -252,9 +252,9 @@ Example:
     				description: //the description from the user,
     			}),
     		};
-
+    
     const response = await fetch(`http://localhost:3000/todos/todos`,requestOptions);
-
+    
     if (response.ok) {
      alert(`Todo title ${inputField.todo_title} Created!`);
     }
@@ -314,7 +314,7 @@ There are multiple ways to achieve this. I suggest use the `ShowView.jsx` compon
 Example:
 
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
-	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/#/Assignments/images/mark-complete.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="/Assignments/images/mark-complete.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
 	</iframe>
 </div>
 
@@ -339,7 +339,7 @@ Example:
 Example:
 
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
-	<iframe allow="fullscreen;" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/#/Assignments/images/delete-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	<iframe allow="fullscreen;" allowfullscreen height="100%" src="/Assignments/images/delete-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
 	</iframe>
 </div>
 
