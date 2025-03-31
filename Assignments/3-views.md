@@ -65,7 +65,7 @@ Example: (You may need to create components and adjust your route as per your de
 
 **Goal**: Fetch a specific Todo from the database and display its details on a webpage.
 
-![Single-Todo](/Assignments/images/single-todo.png)
+![Single-Todo](Assignments/images/single-todo.png)
 
 > [!Note]
 > CSS
