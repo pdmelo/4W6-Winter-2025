@@ -153,7 +153,8 @@ Visit the client URL http://localhost:5173/ to display details of the single tod
 
 Example:
 
-<img src="../Assignments/images/show-todo.png" alt="show-todo" style="zoom:50%;" />
+
+![show-todo](../Assignments/images/show-todo.png)
 
 ### Part 3: Displaying a List of Todos (15%)
 
