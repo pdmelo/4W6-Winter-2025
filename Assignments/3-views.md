@@ -153,13 +153,12 @@ Visit the client URL http://localhost:5173/ to display details of the single tod
 
 Example:
 
-
 ![show-todo](../Assignments/images/show-todo.png)
 
 ### Part 3: Displaying a List of Todos (15%)
 
 **Goal:** Fetch all of your Todos from the database and display them in a neatly formatted list on a webpage.
-![all-tods](../Assignments/images/all-todos.png)
+![all-todos](../Assignments/images/all-todos.png)
 
 1. **Database Preparation:**
    - In addition to the single Todo you created in part 1, add a few more Todos to your database. This will allow you to see how your list view handles multiple items.
@@ -214,7 +213,7 @@ Example:
 **Goal:** Allow users to create new Todos by filling out a form and submitting their input to the server.
 
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
-	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="../Assignments/images/create-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/Assignments/images/create-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
 	</iframe>
 </div>
 
@@ -230,7 +229,7 @@ Example:
 
 - Display a pop up confirming the creation.
 
-- After a successful creation, you need to redirect the user to the newly created Todo’s ShowView, ex. /todos/newId. ( Look at the notes here for [redirects](https://pdmelo.github.io/4W6-Winter-2025/#/Notes/Week9/react-router)
+- After a successful creation, you need to redirect the user to the newly created Todo’s ShowView, ex. /todos/newId. Look at the notes here for [redirects](https://pdmelo.github.io/4W6-Winter-2025/#/Notes/Week9/react-router)
 
 - If the form data is invalid (missing title or description), then render the **CreateTodo** again with an alert message pop up to let the user know what went wrong.
 - Comments are provided in the code to help you guide through.
