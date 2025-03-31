@@ -183,12 +183,12 @@ Example:
        method: "GET",
        mode: "cors",
      };
-    
+
      const response = await fetch(
        `http://localhost:3000/todos/todos`,
        requestOptions
      );
-    
+
      if (response.ok) {
        const data = await response.json();
        setTodoItem(data.payload.todo);
@@ -252,9 +252,9 @@ Example:
     				description: //the description from the user,
     			}),
     		};
-    
+
     const response = await fetch(`http://localhost:3000/todos/todos`,requestOptions);
-    
+
     if (response.ok) {
      alert(`Todo title ${inputField.todo_title} Created!`);
     }
