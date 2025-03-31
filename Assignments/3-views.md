@@ -213,7 +213,7 @@ Example:
 **Goal:** Allow users to create new Todos by filling out a form and submitting their input to the server.
 
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
-	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="/Assignments/images/Create-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/#/Assignments/images/Create-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
 	</iframe>
 </div>
 
@@ -229,7 +229,7 @@ Example:
 
 - Display a pop up confirming the creation.
 
-- After a successful creation, you need to redirect the user to the newly created Todo’s ShowView, ex. /todos/newId. ( Look at the notes here for [redirects](https://pdmelo.github.io/4W6-Winter-2025/#/Notes/Week9/react-router)
+- After a successful creation, you need to redirect the user to the newly created Todo’s ShowView, ex. /todos/newId. Look at the notes here for [redirects](https://pdmelo.github.io/4W6-Winter-2025/#/Notes/Week9/react-router)
 
 - If the form data is invalid (missing title or description), then render the **CreateTodo** again with an alert message pop up to let the user know what went wrong.
 - Comments are provided in the code to help you guide through.
@@ -314,7 +314,7 @@ There are multiple ways to achieve this. I suggest use the `ShowView.jsx` compon
 Example:
 
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
-	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="/Assignments/images/mark-complete.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/#/Assignments/images/mark-complete.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
 	</iframe>
 </div>
 
@@ -339,7 +339,7 @@ Example:
 Example:
 
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
-	<iframe allow="fullscreen;" allowfullscreen height="100%" src="/Assignments/images/delete-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	<iframe allow="fullscreen;" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/#/Assignments/images/delete-todo.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
 	</iframe>
 </div>
 
