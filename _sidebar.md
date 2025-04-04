@@ -56,6 +56,10 @@
 - [3.3 useEffect Exercise](Notes/Week9/33-useeffect.md)
 - [React Router Exercise](Notes/Week9/react-router.md)
 
+**Week 11**
+
+- [Cookies](Notes/Week11/cookies.md)
+
 **Guides**
 
 - [cURL](Guides/curl.md)
