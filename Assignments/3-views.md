@@ -81,7 +81,7 @@ Example: (You may need to create components and adjust your route as per your de
 
 3. **Create the Component:**
 
-   - Create a component `FetchOne.jsx` that receives the `todoId` from the user. This component will then fetch the data from the backend servers.
+   - Use the component `FindOne.jsx` that receives the `todoId` from the user. This component will then fetch the data from the backend servers.
 
    - Comments are provided in the code to help you guide through.
 
@@ -116,7 +116,7 @@ Example: (You may need to create components and adjust your route as per your de
 
    - Display the Todo using the `ShowView` component.
 
-     - In the `ShowView.jsx`, display the `title`, `description`, and `status` of the Todo object passed from `FetchOne.jsx`.
+     - In the `ShowView.jsx`, display the `title`, `description`, and `status` of the Todo object passed from `FindOne.jsx`.
      - Structure the HTML to nicely present the Todo information. The organization is totally up to you.
 
    - **Implement Data using `useEffect`:**
@@ -412,4 +412,3 @@ git push
 
    1. Go to gradescope.ca (not .com!), log in, and click the link for this assignment.
    2. Select the correct repository and branch from the dropdown menus.
-   3. Click Upload.
