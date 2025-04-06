@@ -59,6 +59,7 @@
 **Week 11**
 
 - [Cookies](Notes/Week11/cookies.md)
+- [4.1 Cookies](Notes/Week11/41-cookies.md)
 
 **Guides**
 
