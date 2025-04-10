@@ -60,6 +60,7 @@
 
 - [Cookies](Notes/Week11/cookies.md)
 - [4.1 Cookies](Notes/Week11/41-cookies.md)
+- [4.2 Sessions](https://moodle.johnabbott.qc.ca/mod/hvp/view.php?id=51684)
 
 **Guides**
 
