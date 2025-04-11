@@ -1,3 +1,8 @@
+**Final Project**
+
+- [Proposal Example](project/example-proposal.md)
+- [Specifications](project/specifications.md)
+
 **Assignments**
 
 - [1-Models](Assignments/1-models.md)
