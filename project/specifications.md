@@ -39,7 +39,7 @@ I ask that you go about your design and architecture in a meaningful and purpose
 >While the due date for the proposal is **April 25/26**, the faster you submit, the more time you'll have to work on your implementation. I must look over your proposal and confirm that you're planning to meet all the criteria for the implementation phase. If there are things you're missing or need to fix, I will let you know so that you can incorporate my feedback. I can then give you the green light to get started.
 
 
-The proposal document should be the `README.md` for your repo. **Please look at the [Sample Proposal](../example-proposal)** to get an idea of how your proposal should look. If you're not familiar with writing markdown (`.md`) then please do this [short tutorial](https://www.markdowntutorial.com/). You can also look at how the `README.md` file for this repo was written.
+The proposal document should be the `README.md` for your repo. **Please look at the [Sample Proposal](/project/example-proposal)** to get an idea of how your proposal should look. If you're not familiar with writing markdown (`.md`) then please do this [short tutorial](https://www.markdowntutorial.com/). You can also look at how the `README.md` file for this repo was written.
 
 The proposal must include the following sections:
 
