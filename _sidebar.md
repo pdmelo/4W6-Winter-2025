@@ -74,6 +74,7 @@
 - [Debugging](Guides/debugging.md)
 - [Testing](Guides/testing.md)
 - [TypeScript](Guides/typescript.md)
+- [Type Guards](Guides/type-guards.md)
 - [PostresSQL](Guides/database.md)
 - [REST API](Guides/restapi.md)
 - [Troubleshooting](Guides/troubleshooting.md)
