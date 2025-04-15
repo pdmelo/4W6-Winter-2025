@@ -67,6 +67,10 @@
 - [4.1 Cookies](Notes/Week11/41-cookies.md)
 - [4.2 Sessions](https://moodle.johnabbott.qc.ca/mod/hvp/view.php?id=51684)
 
+**Week 12**
+
+- [4.3 Sessions Exercise](Notes/Week11/43-sessions.md)
+
 **Guides**
 
 - [cURL](Guides/curl.md)

@@ -9,14 +9,27 @@
 
 ## 🔨 Setup
 
+1. Open your terminal and navigate to your ~/web-ii/exercises/ directory
 
+2. Navigate to the [template repository](https://github.com/JAC-CS-Web-Programming-II-W25/E4.3-Sessions-Template)  and click Code -> 📋 to copy the URL:
 
-1. Navigate to the [template repository](https://github.com/JAC-CS-Web-Programming-II-W24/E4.3-Sessions-Template) for this exercise and [follow these directions](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template) to fork it.
-2. Assuming Docker is started, in VS Code, hit `CMD/CTRL + SHIFT + P`, search + run `dev container: open folder in container`, and select the downloaded folder.
-3. In the terminal of VS Code, hit the `+` icon to open a new terminal instance. Run `ls` to make sure you're in the root directory of the exercise and that you see `package.json`.
-4. Run `npm install` to install the dependencies.
-5. Run `npm run server` inside a JavaScript debug terminal to start the server.
-6. Open the [website](http://localhost:3000) in the browser.
+   ```bash
+   git clone <paste URL here>
+   ```
+
+   
+
+3. Rename the cloned folder to `~/web-ii/exercises/4.3-sessions/`
+
+4. Assuming Docker is started, in VS Code, hit `CMD/CTRL + SHIFT + P`, search + run `dev container: open folder in container`, and select the downloaded folder.
+
+5. In the terminal of VS Code, hit the `+` icon to open a new terminal instance. Run `ls` to make sure you’re in the root directory of the exercise and you see `client` and `server` folders.
+
+6. cd to `client` to run `npm run dev` to start the react server.
+
+7. Open the website in the browser.
+
+8. cd to `server`Run `npm run server` inside a JavaScript debug terminal to start the server.
 
 
 
@@ -30,11 +43,9 @@ In this exercise, we will implement a basic session system that allows users to 
 
 ### Part 1: 🍪 Basic Sessions
 
-<Steps>
+1. Let's first understand the way sessions are implemented in this exercise. Open `sessions.ts` on the server side in the `src` folder.
 
-1. Let's first understand the way sessions are implemented in this exercise.
-
-	```ts
+	```tsx
 	// session.ts
 	interface Session {
 		id: string;
@@ -55,26 +66,22 @@ In this exercise, we will implement a basic session system that allows users to 
 	- The `sessions` object is a dictionary that stores session objects with their IDs as keys. Recall that a _dictionary_ is a collection of key-value pairs which we implement in TypeScript using the [Record type](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type).
 	- The `createSession()` function generates a new session object with a random ID and an empty data object.
 
-2. The `getSession()` function retrieves the session object associated with the user's visit to the website. If the user has a session ID cookie, the function retrieves the session object from the `sessions` object using the session ID. If the user does not have a session ID cookie (ex. first visit to the site), the function creates a new session object and sets the session ID cookie to the new session's ID.
+2. The `getSession()` function retrieves the session object associated with the user's visit to the website. If the user has a session ID cookie, the function retrieves the session object from the `sessions` object using the session ID. If the user does not have a session ID cookie (ex. first login to the site), the function creates a new session object and sets the session ID cookie to the new session's ID.
 
 	```ts
 	// session.ts
 	export const getSession = (req: IncomingMessage) => {
 		const sessionId = getCookies(req)["session_id"];
 		let session: Session | undefined;
-
+	
 		if (sessionId) {
 			session = sessions[sessionId];
 		}
-		else {
-			session = createSession();
-			sessions[session.id] = session;
-		}
-
+	
 		return session;
 	};
 	```
-
+	
 3. Inside the `getHome()` controller function, follow the steps outlined in the comment. After you retrieve the session object, you can set a session cookie using the `Set-Cookie` response header we learned how to use in [E4.1](/Notes/Week11/41-cookies?id=part-1-🍪-basic-cookies).
 4. Once that's done, refresh the page and verify that there is a cookie with the session ID in the browser's dev tools. Take note of the session ID value.
 5. Refresh the page again and verify that the session ID cookie is still present and has the same value. Also verify that the sessions object is being logged to the terminal on each request.
@@ -84,7 +91,7 @@ In this exercise, we will implement a basic session system that allows users to 
 ![Session ID cookie](../../images/4.3.1-Session-ID.png)
 
 >[!note]
->[Key Takeaways]
+>**Key Takeaways**
 >
 >1. Sessions are a way to store data on the server that is associated with a user's visit to a website.
 >2. Sessions are typically implemented using cookies.
@@ -96,56 +103,70 @@ In this exercise, we will implement a basic session system that allows users to 
 ### Part 2: 🔓 Logging In
 
 
-1. Now that we have a working session mechanism in place, let's implement a login system. Add the following form to the Login.jsx component:
+1. Now that we have a working session mechanism in place, let's implement a login system. Note that sessions are normally set in place when a user logins, Sessions are not generated when a page is loaded. 
+1. **Cleanup:**In the `gethome()` controller function. Comment out the code added in Part 1. The code that gets the session and sets the Cookie header with the session id.
+1. Lets  Add the following code to the Home.jsx component:
 
-	```jsx
-	<!-- loging.jsx -->
-	<form action="{{ path 'login' }}" method="POST">
-		<input type="text" name="name" placeholder="Name">
-		<button type="submit">Login</button>
-	</form>
-	```
+  ```jsx
+  <!-- home.jsx -->
+  <>
+  	<input
+  	type="text"
+  	value={userName}
+  	onChange={(e) => setUserName(e.target.value)}
+  	placeholder="Enter username"
+  	style={{ marginRight: "8px" }}
+  	/>
+  
+  	<button onClick={handleLogin}>Login</button>
+  </>
+  ```
 
-	- The form has a single input field for the user's name and a submit button. Normally we'd have a password field as well, but for simplicity, we're only asking for the user's name.
-	- The form sends a POST request to the `/login` route when submitted.
+  - The form has a single input field for the user's name and a submit button. Normally we'd have a password field as well, but for simplicity, we're only asking for the user's name.
+  - The form sends a POST request to the `/login` route when submitted.
 
 2. Create a new route to handle this request and wire it to the `login()` controller function. Then, follow the steps inside the `login()` function to allow the user to log in.
-3. Modify `getHome()` to display a welcome message with the user's name if they are logged in by using the `isLoggedIn` and `name` properties of the session object, if they exist.
+3. Modify `home.jsx` , create a login handler to fetch information from server, to display a welcome message with the user's name if they are logged in by using the `isLoggedIn` and `name` properties of the session object, if they exist.
 
-	<div style="position:relative; width:100%; height:0px; padding-bottom:62.500%"><iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://streamable.com/e/4gr13p?autoplay=1&muted=1" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div>
+<div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
+<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="..//images/4.3.2-Sessions.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	</iframe>
+</div>
+https://pdmelo.github.io/4W6-Winter-2025/images/4.3.2-Sessions.mp4
 
-4. Next let's only allow logged-in users to add Pokemon to the database. In the `getAllPokemon()` controller function, follow the steps outlined in the comment to only display the form if the user is logged in. This will also require modifying the `ListView.hbs` template to only display the form if the user is logged in.
-5. To test if the login system is working, start with being logged out. Since everytime the server is restarted it clears all session data, you can simply restart the server to log out. Check that you can't see the form to add Pokemon. Then, log in with a name and check that you can see the form to add Pokemon.
-6. There's a glaring flaw with our design though! Just because there is no form to add Pokemon, doesn't mean a user can't send a POST request to the `/pokemon` route. Try sending a POST request to the `/pokemon` route using [cURL](../../references/curl/#post-requests). You'll notice that you can still add Pokemon to the database even if you're not logged in. To fix this, follow the comment in the `createPokemon()` controller function to only allow logged-in users to add Pokemon.
+4. Next let's only allow logged-in users to add Pokemon to the database. In the `getAllPokemon()` controller function, follow the steps outlined in the comment to only display the form if the user is logged in.
+    This will also require modifying the `DisplayAll.jsx` template to only display the form if the user is logged in.
+5. To test if the login system is working, start with being logged out. Since everytime the server is restarted it clears all session data, you can simply restart the server to log out. 
+6. Next let's only allow logged-in users to add Pokemon to the database. 
+7. There's a glaring flaw with our design though! Just because there is no form to add Pokemon, doesn't mean a user can't send a POST request to the `/pokemon` route. Try sending a POST request to the `/pokemon` route using [cURL](../../references/curl/#post-requests). You'll notice that you can still add Pokemon to the database even if you're not logged in. To fix this, follow the comment in the `createPokemon()` controller function to only allow logged-in users to add Pokemon.
 
-</Steps>
 
-![Unauthorized](@assets/exercises/4.3.2-Unauthorized.png)
 
-:::note[Key Takeaways]
+![Unauthorized](../../images/4.3.3-Unauthorized.png)
 
-1. A login system allows users to authenticate themselves to a website.
-2. Sessions are used to store information about the user's authentication status.
-3. The session object stores information about the user, such as their name, to personalize the user's experience on the website.
-4. The session object can be used to restrict access to certain parts of the website to only logged-in users.
+> [!note]
+> [Key Takeaways]
+>
+>1. A login system allows users to authenticate themselves to a website.
+>2. Sessions are used to store information about the user's authentication status.
+>3. The session object stores information about the user, such as their name, to personalize the user's experience on the website.
+>4. The session object can be used to restrict access to certain parts of the website to only logged-in users.
 
-:::
+
 
 ### Part 3: 🔒 Logging Out
 
-<Steps>
+1. Implement a logout system by adding a logout button to the `home.jsx`. Display the Logout if logged in .The button should send a GET request to the `/logout` route.
 
-1. Implement a logout system by adding a logout button to the header. The button should send a GET request to the `/logout` route.
-
-	```hbs
-	<!-- Header.hbs -->
-	<form action="{{ path 'logout' }}" method="GET">
-		<button type="submit">Logout</button>
-	</form>
+	```jsx
+	<!-- home.jsx -->
+		<>
+			<button onClick={handleLogout}>Logout</button>
+		</>
 	```
 
 2. Create a new route to handle this request and wire it to the `logout()` controller function. Then, follow the steps inside the `logout()` function to allow the user to log out.
-	- To make the [cookie expire](http://localhost:4321/concepts/cookies/#-expires-and-max-age), set the `Expires` attribute of the `Set-Cookie` header to a date in the past.
+	- To make the [cookie expire](https://pdmelo.github.io/4W6-Winter-2025/#/Notes/Week11/cookies?id=%e2%8f%b3-expires-and-max-age), set the `Expires` attribute of the `Set-Cookie` header to a date in the past.
 
 	```ts
 	new Date(new Date().getTime() - 5000).toUTCString();
@@ -158,7 +179,7 @@ In this exercise, we will implement a basic session system that allows users to 
 	2. Note the session ID.
 	3. Log out, and check that the session ID is now different.
 
-</Steps>
+
 
 To really understand how the new session is being set after logging out, let's walk through the following scenario:
 
@@ -169,13 +190,13 @@ To really understand how the new session is being set after logging out, let's w
 | GET `/logout` | `{123}` | `303 /` | `{---}` | Client logs out, server redirects with expired cookie, client deletes expired cookie. |
 | GET `/` | `{}` | `200` | `{456}` | Client performs the redirect with no cookie, server responds OK with new cookie. |
 
-:::note[Key Takeaways]
+>[!note]
+>[Key Takeaways]
+>
+>1. A logout system allows users to de-authenticate themselves from a website.
+>2. Logging out invalidates the session ID cookie, forcing the user to log in again to access restricted parts of the website.
+>3. Logging out is important for security reasons, as it prevents unauthorized access to a user's account.
 
-1. A logout system allows users to de-authenticate themselves from a website.
-2. Logging out invalidates the session ID cookie, forcing the user to log in again to access restricted parts of the website.
-3. Logging out is important for security reasons, as it prevents unauthorized access to a user's account.
-
-:::
 
 ### Part 4: 👑 Bonus Challenge
 
@@ -189,10 +210,10 @@ This phenomenon is known as [**session hijacking**](https://en.wikipedia.org/wik
 
 Take a screenshot after you log in so that your name is displayed in the welcome message. Make sure to have your browser's dev tools open to the `Application` tab showing the session ID cookie, and the server terminal open on the side showing the session data object.
 
-![Submission](@assets/exercises/4.3.3-Submission.png)
+![Submission](../..//4.3.3-Submission.png)
 
 Submit the screenshot on Moodle.
 
 ---
 
-[![Comic](@assets/exercises/4.3.4-Comic.jpg)](https://nfakes.com/)
+![Comic](../../images/4.3.4-Comic.jpg)
