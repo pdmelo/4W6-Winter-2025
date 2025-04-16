@@ -104,8 +104,24 @@ In this exercise, we will implement a basic session system that allows users to 
 
 
 1. Now that we have a working session mechanism in place, let's implement a login system. Note that sessions are normally set in place when a user logins, Sessions are not generated when a page is loaded. 
-1. **Cleanup:**In the `gethome()` controller function. Comment out the code added in Part 1. The code that gets the session and sets the Cookie header with the session id.
-1. Lets  Add the following code to the Home.jsx component:
+
+1. **Cleanup:**
+
+
+   1. In the `gethome()` controller function. Comment out the code added in Part 1. The code that gets the session and sets the Cookie header with the session id.
+
+   1. In the `session.ts `comment out the code that create a new session in the `getSession` function. Now we will create a new session id only when the user logs in.
+
+      ```
+      // else {
+      	// 	session = createSession();
+      	// 	sessions[session.id] = session;
+      	// }
+      ```
+
+      
+
+1. Lets  Add the following code to the `Home.jsx` component:
 
   ```jsx
   <!-- home.jsx -->
@@ -129,10 +145,10 @@ In this exercise, we will implement a basic session system that allows users to 
 3. Modify `home.jsx` , create a login handler to fetch information from server, to display a welcome message with the user's name if they are logged in by using the `isLoggedIn` and `name` properties of the session object, if they exist.
 
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
-<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="..//images/4.3.2-Sessions.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/images/4.3.2-Sessions.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
 	</iframe>
 </div>
-https://pdmelo.github.io/4W6-Winter-2025/images/4.3.2-Sessions.mp4
+
 
 4. Next let's only allow logged-in users to add Pokemon to the database. In the `getAllPokemon()` controller function, follow the steps outlined in the comment to only display the form if the user is logged in.
     This will also require modifying the `DisplayAll.jsx` template to only display the form if the user is logged in.
@@ -144,13 +160,25 @@ https://pdmelo.github.io/4W6-Winter-2025/images/4.3.2-Sessions.mp4
 
 ![Unauthorized](../../images/4.3.3-Unauthorized.png)
 
+
+
+Here is curl command example , to verify you can can add new pokemon  when logged in . Make sure you logged in first, and get the session cookie. Then try this command.
+
+```bash
+
+curl -v -X POST -H "Content-Type:application/json"  -b "session_id=your-sessionID" -d '{"name":"Meow","type":"Grass"}' http://localhost:3000/pokemon 
+```
+
+
+
 > [!note]
-> [Key Takeaways]
+> **Key Takeaways**
 >
->1. A login system allows users to authenticate themselves to a website.
->2. Sessions are used to store information about the user's authentication status.
->3. The session object stores information about the user, such as their name, to personalize the user's experience on the website.
->4. The session object can be used to restrict access to certain parts of the website to only logged-in users.
+> 1. A login system allows users to authenticate themselves to a website.
+>
+> 2. Sessions are used to store information about the user's authentication status.
+> 3. The session object stores information about the user, such as their name, to personalize the user's experience on the website.
+> 4. The session object can be used to restrict access to certain parts of the website to only logged-in users.
 
 
 
@@ -177,21 +205,20 @@ https://pdmelo.github.io/4W6-Winter-2025/images/4.3.2-Sessions.mp4
 3. Verify that the user can be logged out.
 	1. Log in with a name.
 	2. Note the session ID.
-	3. Log out, and check that the session ID is now different.
+	3. Log out, and check that the session IDis cleared on the browser.
 
 
 
 To really understand how the new session is being set after logging out, let's walk through the following scenario:
 
-| Request | Client Cookie | Response | Server Cookie | Description |
-|---------|---------------|----------|---------------|-------------|
-| POST `/login`  | `{}` | `303 /` | `{123}` | Client logs in, server redirects to the homepage with session cookie 123. |
-| GET `/` | `{123}` | `200` | `{123}` | Client performs the redirect and sends the cookie with the request. Server responds OK with the cookie back. |
-| GET `/logout` | `{123}` | `303 /` | `{---}` | Client logs out, server redirects with expired cookie, client deletes expired cookie. |
-| GET `/` | `{}` | `200` | `{456}` | Client performs the redirect with no cookie, server responds OK with new cookie. |
+| Request | Client Cookie | Server Cookie | Description |
+|---------|---------------|---------------|-------------|
+| POST `/login`  | `{}` | `{123}` | Client logs in, server redirects to the homepage with session cookie 123. |
+| GET `/` | `{123}` | `{123}` | Client performs the redirect and sends the cookie with the request. Server responds OK with the cookie back. |
+| GET `/logout` | `{123}` | `{---}` | Client logs out, server sets expired cookie, client deletes expired cookie.Client redirect to the logout |
 
 >[!note]
->[Key Takeaways]
+>**Key Takeaways**
 >
 >1. A logout system allows users to de-authenticate themselves from a website.
 >2. Logging out invalidates the session ID cookie, forcing the user to log in again to access restricted parts of the website.
@@ -202,15 +229,18 @@ To really understand how the new session is being set after logging out, let's w
 
 When you logged out, you might have noticed that session data is not being cleared. This is because we are only clearing the session ID cookie, not the session data on the server. This means if someone got a hold of the session ID, they could still access the website as if they were logged in.
 
-<div style="position:relative; width:100%; height:0px; padding-bottom:62.500%"><iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://streamable.com/e/ih8bf4?autoplay=1&muted=1" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div>
+<div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
+<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/images/4.3.3-HIjacking.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	</iframe>
+</div>
 
-This phenomenon is known as [**session hijacking**](https://en.wikipedia.org/wiki/Session_hijacking). To defend against this kind of attack, implement a session expiration system to clear session data after a certain amount of time has passed since the user last visited the website, or once the user logs out.
+This phenomenon is known as [**session hijacking**](https://en.wikipedia.org/wiki/Session_hijacking). To defend against this kind of attack, implementto  to clear session data once the user logs out.
 
 ## 📥 Submission
 
 Take a screenshot after you log in so that your name is displayed in the welcome message. Make sure to have your browser's dev tools open to the `Application` tab showing the session ID cookie, and the server terminal open on the side showing the session data object.
 
-![Submission](../..//4.3.3-Submission.png)
+![Submission](../../images/4.3.3-Submission.png)
 
 Submit the screenshot on Moodle.
 
