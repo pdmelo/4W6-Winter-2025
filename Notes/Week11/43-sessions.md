@@ -234,7 +234,7 @@ When you logged out, you might have noticed that session data is not being clear
 	</iframe>
 </div>
 
-This phenomenon is known as [**session hijacking**](https://en.wikipedia.org/wiki/Session_hijacking). To defend against this kind of attack, implementto  to clear session data once the user logs out.
+This phenomenon is known as [**session hijacking**](https://en.wikipedia.org/wiki/Session_hijacking). To defend against this kind of attack, implement  to clear session data once the user logs out.
 
 ## 📥 Submission
 
