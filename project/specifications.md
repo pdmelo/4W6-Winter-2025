@@ -84,7 +84,21 @@ For the final implementation, here's what I'll be looking for:
 
 ## 🌱 Starter
 
-I will provide a starter template (Working on it....)
+I’ve provided a starter template which should look familiar to you by now.
+
+- `models`: Populate this folder with your own model entities.
+
+- `controllers`: Populate this folder with your own controllers.
+
+- `views`: Populate this folder with your own react components.
+
+- `tests` : There are two files, one for model tests and http tests. I will show in class the browser test.. I recommend you work in that order.
+
+  - Start with your first model, write one test for it, pass the test, then write the next test. Once you’re done with all the model tests, move onto creating controller tests, and finally to your browser tests. Rinse and repeat for each entity.
+  - Writing the test **before** you implement the method is called [test driven development](https://en.wikipedia.org/wiki/Test-driven_development) and its considered a good developer practice. In fact, it’s how I created all the assignments for this course.
+  - Running the tests is exactly the same as A4.
+
+- `init.sql`: You’ll need to update this with your own entities. Remember you can run this file on the database with `psql -f init.sql`. You’ll be running this command a lot so I recommend you prepend all statements in the script with the appropriate `DROP IF EXISTS` statement. Use any `init.sql` script from this course as an example.
 
 
 
