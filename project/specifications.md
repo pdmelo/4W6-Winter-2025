@@ -6,7 +6,7 @@
     -   **Implementation**: 25%
 -   📅 **Due**:
     -   **Proposal**: April 25/26, 2025 @ 11:30
-    -   **Implementation**: TBD @ your demo appointment time
+    -   **Implementation**: TBD @ your demo appointment time, latest  May 14,2025
 
 ## 🎯 Objectives
 
