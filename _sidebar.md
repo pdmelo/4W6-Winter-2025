@@ -76,6 +76,7 @@
 - [cURL](Guides/curl.md)
 - [Environment Setup](Guides/environment-setup.md)
 - [Debugging](Guides/debugging.md)
+- [Logging and Documentation](Guides/logging.md)
 - [Testing](Guides/testing.md)
 - [TypeScript](Guides/typescript.md)
 - [Type Guards](Guides/type-guards.md)
