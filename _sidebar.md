@@ -59,7 +59,7 @@
 
 - [3.2 useState Exercise](Notes/Week9/32-usestate.md)
 - [3.3 useEffect Exercise](Notes/Week9/33-useeffect.md)
-- [React Router Exercise](Notes/Week9/react-router.md)
+- [3.4 React Router Exercise](Notes/Week9/34-react-router.md)
 
 **Week 11**
 
@@ -70,6 +70,10 @@
 **Week 12**
 
 - [4.3 Sessions Exercise](Notes/Week11/43-sessions.md)
+
+**Week 14**
+
+- [3.5 UI Testing](Notes/Week9/35-testing.md)
 
 **Guides**
 
