@@ -30,7 +30,7 @@ In the last exercise, we used **React** to build dynamic and interactive pages o
 Now, we’ll shift gears and focus on **testing our frontend applications** using [Playwright](https://playwright.dev/). Playwright is a powerful automation framework for web browsers. Its [UI mode](https://playwright.dev/docs/test-ui-mode) allows us to visually interact with a running browser instance controlled by Playwright. This is a fantastic tool for debugging frontend issues because we can see the application exactly as a user would, pinpoint rendering problems, and even inspect elements directly within the browser. Imagine being able to watch your application in action, click around, and see how the code translates to the visual elements on the screen - that’s the magic of Playwright’s UI mode, making debugging a breeze!
 
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
-	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/images/3.3.1-playwright" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/images/3.3.1-playwright.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
 	</iframe>
 </div>
 
