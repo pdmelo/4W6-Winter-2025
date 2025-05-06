@@ -162,14 +162,18 @@ In the 4.X exercises, we learned about cookies/sessions and how to manage them u
 
 
 
-A4-register
+User registration
 
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
 	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/Assignments/images/A4-register.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
 	</iframe>
 </div>
 
-
+User already exist 
+<div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
+	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/Assignments/images/A4-register-duplicate.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	</iframe>
+</div>
 
 ### Part 3: Login/Logout (20%)
 
@@ -201,7 +205,10 @@ A4-register
 4. Upon submission, the  validate that no fields are blank/missing, and that the email and password match a user in the database. If there are any errors, display  error message to the user.
 5. The form should also have a checkbox for “Remember Me”. If this checkbox is checked when the form is submitted, the server should set a cookie to remember the user’s email. When the user logs out and visits the login page again, the email field should be pre-filled with the value of this cookie.(OPTIONAL)
 
-**[TODO - Video]**
+<div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
+	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/Assignments/images/A4-login.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	</iframe>
+</div>
 
 ### Part 4: Todo Authentication (20%)
 
@@ -213,7 +220,10 @@ A4-register
 
 3. Since a Todo can only be created by an authenticated user, you should also update the `createTodo` method in the `TodoController` to set the `userId` parameter of the Todo to the `userId` parameter of the session. Also, ensure that a Todo can only be updated/deleted by the user who created it. To achieve this, notice the `todos` database table now has a `userId` column to signify that each todo belongs to a user, and the `TodoProps` interface has been updated to reflect this.
 
-**[TODO - Video]**
+<div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
+	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/Assignments/images/A4-authentication.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	</iframe>
+</div>
 
 #### View
 
