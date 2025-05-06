@@ -4,8 +4,6 @@
 - 📅 **Due**: May 18, 2025 @ 23:59
 - 🚫 **Penalty**: Late submissions lose 10% per day to a maximum of 3 days. Nothing is accepted after 3 days and a grade of 0% will be given.
 
-
-
 ## 🎯 Objectives
 
 - **Implement** a registration system using emails and passwords for user account creation.
@@ -13,8 +11,6 @@
 - **Construct** user interface elements (login and registration forms) that interact with authentication logic.
 - **Protect** specific app routes by requiring user authentication.
 - **Enhance** the app by adding user profile management features or an admin role with elevated permissions.
-
-
 
 ## 🔨 Setup
 
@@ -32,8 +28,6 @@
 >
 > If the database does not get set up properly when you first build your container, you can run `psql -f .devcontainer/init.sql` (making sure you’re inside the container, i.e. the bottom left of VS Code should say “Dev Container”) to manually run the initialization script.
 
-
-
 ## 🔍 Context
 
 To complete this assignment, you should be familiar with the following concepts and theories:
@@ -45,8 +39,6 @@ To complete this assignment, you should be familiar with the following concepts 
 >
 > If you’re not comfortable with any of the above, **please send me a message on Teams** and I can help you! It is your responsibility to ensure you have learned all concepts we’ve seen so far so that you can do the assignment effectively.
 
-
-
 In this assignment, you will be implementing user authentication in the Todo application. This will involve creating a `User` model class, a `UserController` class, and an `AuthController` class. The `User` model will represent a user in the system, the `UserController` will handle user-related HTTP requests, and the `AuthController` will handle authentication-related HTTP requests such as logging in and logging out of the system.
 
 > [!important]
@@ -54,8 +46,6 @@ In this assignment, you will be implementing user authentication in the Todo app
 > Starter Code
 >
 > There is a minimal solution from last assignment to get you started. Many of the features and error handling are not implemented. It is advised to copy over as much code as you can from your previous assignment to save time. The minimal solution is there for those who perhaps didn’t complete the last assignment or are having trouble with the concepts.
-
-
 
 ### Auth Classes
 
@@ -78,7 +68,6 @@ In the 4.X exercises, we learned about cookies/sessions and how to manage them u
 +   this.session = this.getSession();
   }
 ```
-
 
 - `getCookies()`: Parses the `Cookie` header from the request and returns an array of `Cookie` objects.
 - `findCookie()`: Finds a cookie in the `cookies` array by name.
@@ -142,8 +131,6 @@ In the 4.X exercises, we learned about cookies/sessions and how to manage them u
 
    - The commented out tests are for the extra feature in part 5. You can ignore them for now.
 
-
-
 ### Part 2: Registration (20%)
 
 **Goal**: Implement the `UserController` and `AuthController` classes which will handle user-related HTTP requests.
@@ -160,16 +147,19 @@ In the 4.X exercises, we learned about cookies/sessions and how to manage them u
 3. The form should have a submit button that will send a POST request to `/users`.
 4. Have an area to display any error messages that are passed in the query params.
 
-
-
-A4-register
+User registration
 
 <div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
 	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/Assignments/images/A4-register.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
 	</iframe>
 </div>
 
+User already exist
 
+<div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
+	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/Assignments/images/A4-register-duplicate.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	</iframe>
+</div>
 
 ### Part 3: Login/Logout (20%)
 
@@ -187,7 +177,7 @@ A4-register
 >
 > It’s crucial that you understand how sessions work to do this assignment. If you did not complete the 4.X exercises, please go back and do them now. Refer to 4.3 in particular to understand how to set a session parameter and a session cookie, and re-read the context section above that explain the 3 auth classes you need to understand and use.
 
-3. If the login is unsuccessful, send a respond of `BadRequest` with  an error message `"Invalid credentials."` using the same query param technique outlined in the tip above.
+3. If the login is unsuccessful, send a respond of `BadRequest` with an error message `"Invalid credentials."` using the same query param technique outlined in the tip above.
 
 4. The `AuthController` should have a `logout` method that will log the user out of the system when making a GET request to `/logout`.
 
@@ -195,13 +185,16 @@ A4-register
 
 #### View
 
-1. The `react application` should have a `login`  component that will render a login form view when making a GET request to `/login`.
+1. The `react application` should have a `login` component that will render a login form view when making a GET request to `/login`.
 2. The form should have fields for `email` and `password`.
 3. The form should have a submit button that will send a POST request to `/login`.
-4. Upon submission, the  validate that no fields are blank/missing, and that the email and password match a user in the database. If there are any errors, display  error message to the user.
+4. Upon submission, the validate that no fields are blank/missing, and that the email and password match a user in the database. If there are any errors, display error message to the user.
 5. The form should also have a checkbox for “Remember Me”. If this checkbox is checked when the form is submitted, the server should set a cookie to remember the user’s email. When the user logs out and visits the login page again, the email field should be pre-filled with the value of this cookie.(OPTIONAL)
 
-**[TODO - Video]**
+<div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
+	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/Assignments/images/A4-login.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	</iframe>
+</div>
 
 ### Part 4: Todo Authentication (20%)
 
@@ -213,13 +206,14 @@ A4-register
 
 3. Since a Todo can only be created by an authenticated user, you should also update the `createTodo` method in the `TodoController` to set the `userId` parameter of the Todo to the `userId` parameter of the session. Also, ensure that a Todo can only be updated/deleted by the user who created it. To achieve this, notice the `todos` database table now has a `userId` column to signify that each todo belongs to a user, and the `TodoProps` interface has been updated to reflect this.
 
-**[TODO - Video]**
+<div style="position:relative; width:100%; height:0px; padding-bottom:62.500%;">
+	<iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://pdmelo.github.io/4W6-Winter-2025/Assignments/images/A4-authentication.mp4" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden; border-radius: 5px; ">
+	</iframe>
+</div>
 
 #### View
 
 1. Ensure on the client side, that no endpoint bypass the login.
-
-
 
 ## 💡 Tests & Tips
 
@@ -230,6 +224,7 @@ A4-register
 > Passing all the tests is **not an indicator for obtaining 100%**. Granted, when you do pass all the tests it’s definitely a good sign. However, the tests are provided as an aide for you to guide your development.
 
 - The tests will give you an idea about what I’ll be looking for, but I haven’t written tests for every single case. You should be testing your code manually as well. Here are some non-exhaustive examples of things you should be testing:
+
   - **400 Bad Request**: If a user tries to create an entity with a blank field, for example, you should return a 400 Bad Request status code and an error message.
   - **404 Not Found**: If a user tries to perform an action on an entity that doesn’t exist, you should return a 404 Not Found status code.
   - **401 Unauthorized**: If an unauthenticated user tries to perform an action on an entity that they need to be authenticated for, you should return a 401 Unauthorized status code.
@@ -239,9 +234,9 @@ A4-register
 
 **In fact, I advise having three terminals open:**
 
-  1. `psql`
-  2. `npm run server` 
-  3. `npm run test` (debug terminal)
+1. `psql`
+2. `npm run server`
+3. `npm run test` (debug terminal)
 
 - Follow the steps outlined above and run the tests according to which feature you’re currently working on. Remember to **not run all the tests**, but instead, run the tests for the feature you’re currently working on. For non-Playwright tests, stick a `test.only` in the test you’re working on to run only that test.
 
@@ -266,7 +261,7 @@ To submit your assignment, follow these steps:
 
    ```cmd
    git add .
-   
+
    git commit -m "Completed Authentication implementation."
    ```
 
