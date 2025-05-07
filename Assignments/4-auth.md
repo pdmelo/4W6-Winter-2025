@@ -14,7 +14,7 @@
 
 ## 🔨 Setup
 
-1. Fork (do not download as a zip) the starter repository from GitHub. Make sure you use the link from Moodle to fork the proper repository.
+1. [Click here]() to join the Git classroom.
 2. Make sure Docker Desktop is open.
 3. Start the development container in VS Code by using the `Dev Containers: Open Folder in Container...` command from the Command Palette (Ctrl or ⌘ + SHIFT + P) and select the cloned directory.
 4. Verify that the database was set up properly by running:
@@ -35,7 +35,7 @@ To complete this assignment, you should be familiar with the following concepts 
 - **[Cookies](https://pdmelo.github.io/4W6-Winter-2025/#/Notes/Week11/cookies)**: How to set and read cookies in a web application.
 - **[Sessions](https://pdmelo.github.io/4W6-Winter-2025/#/Notes/Week11/43-sessions)**: How to manage sessions in a web application.
 
-> [!caution]
+> [!note]
 >
 > If you’re not comfortable with any of the above, **please send me a message on Teams** and I can help you! It is your responsibility to ensure you have learned all concepts we’ve seen so far so that you can do the assignment effectively.
 
@@ -91,7 +91,7 @@ In the 4.X exercises, we learned about cookies/sessions and how to manage them u
 
 ## 🚦 Let’s Go
 
-> [!important]
+> [!note]
 >
 > **Read the Comments**
 >
@@ -217,7 +217,7 @@ User already exist
 
 ## 💡 Tests & Tips
 
-> [!important]
+> [!note]
 >
 > Tests are a Guide
 >
