@@ -1,8 +1,8 @@
 # 4 - Auth
 
 - 💯 **Worth**: to a portion of your Final Project%
-- 📅 **Due**: May 18, 2025 @ 23:59
-- 🚫 **Penalty**: Late submissions lose 10% per day to a maximum of 3 days. Nothing is accepted after 3 days and a grade of 0% will be given.
+- 📅 **Due**: May 20, 2025 @ 23:59
+- 🚫 **Penalty**: Nothing is accepted after due date and a grade of 0% will be given.
 
 ## 🎯 Objectives
 
@@ -14,7 +14,7 @@
 
 ## 🔨 Setup
 
-1. [Click here]() to join the Git classroom.
+1. [Click here](https://classroom.github.com/a/vmxjeJhI) to join the Git classroom.You can fork the assignment from there.
 2. Make sure Docker Desktop is open.
 3. Start the development container in VS Code by using the `Dev Containers: Open Folder in Container...` command from the Command Palette (Ctrl or ⌘ + SHIFT + P) and select the cloned directory.
 4. Verify that the database was set up properly by running:
@@ -196,7 +196,7 @@ User already exist
 	</iframe>
 </div>
 
-### Part 4: Todo Authentication (20%)
+### Part 4: Todo Authentication (40%)
 
 **Goal**: Ensure that only authenticated users can access the Todo-related routes.
 
@@ -214,6 +214,7 @@ User already exist
 #### View
 
 1. Ensure on the client side, that no endpoint bypass the login.
+1. Look at all the components and the router in the App.jsx , you want all authenticated and authorised users to have access to them.
 
 ## 💡 Tests & Tips
 
@@ -232,11 +233,12 @@ User already exist
 
 - Ensure the database is being affected how you think it should be by pausing on a breakpoint in your code and running a select statement on the database using `psql`.
 
-**In fact, I advise having three terminals open:**
+**In fact, I advise having the following terminals open:**
 
 1. `psql`
-2. `npm run server`
-3. `npm run test` (debug terminal)
+2. `npm run dev`
+3. `npm run server`
+4. `npm run test` (debug terminal)
 
 - Follow the steps outlined above and run the tests according to which feature you’re currently working on. Remember to **not run all the tests**, but instead, run the tests for the feature you’re currently working on. For non-Playwright tests, stick a `test.only` in the test you’re working on to run only that test.
 
